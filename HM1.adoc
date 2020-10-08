@@ -1,0 +1,30 @@
+= Höhere Mathematik 1 
+
+:stem: asciimath
+:imagesdir: img
+
+== Fixpunktgleichung
+
+Startwert: stem:[x_0] (in der Nähe von stem:[bar x])
+
+stem:[x_1 = F(x_0)]
+
+stem:[x_2 = F(x_1)]
+
+...
+
+stem:[x_(n + 1) = F(x_n)]
+
+.Fixpunkt Iteration
+|===
+| Konvergiert | Divergiert
+
+^a| image::Fixpunktiteration.png[Fixpunkt Iterations Grafik Konvergiert, 300]
+^a| image::FixPunktDivergiert.png[Fixpunkt Iterations Grafik Divergiert, 300]
+
+|===
+
+[horizontal]
+Anziehender Fixpunkt:: stem:[|F'(barx)| < 1] konvergiert
+Abstossender Fixpunkt:: stem:[|F'(barx)| > 1] divergiert das Verfahren und
+Grenzfall:: stem:[|F'(barx)| = 1]
