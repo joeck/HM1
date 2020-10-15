@@ -28,3 +28,15 @@ stem:[x_(n + 1) = F(x_n)]
 Anziehender Fixpunkt:: stem:[|F'(barx)| < 1] konvergiert
 Abstossender Fixpunkt:: stem:[|F'(barx)| > 1] divergiert das Verfahren und
 Grenzfall:: stem:[|F'(barx)| = 1]
+
+== Newton Verfahren
+
+
+|===
+
+| Newtonverfahren | Vereinfachtes Newtonverfahren | Sekantenverfahren
+| stem:[x_(n+1) = x_n - f(x_n)/(f'(x_n))] 
+| stem:[x_(n+1) = x_n - f(x_n)/(f'(x_0))]
+| stem:[x_(n+1) = x_n - (x_n - x_(n-1))/(f(x_n) - f(x_(n-1))) * f(x_n)]
+
+|===
