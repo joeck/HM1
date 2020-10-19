@@ -442,24 +442,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1 data-line-6">
-<h2 id="_fixpunktgleichung">Fixpunktgleichung</h2>
+<h2 id="_numerische_lösung_von_nullstellenproblemen">Numerische Lösung von Nullstellenproblemen</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-8">
+<div class="sect2 data-line-8">
+<h3 id="_fixpunktgleichung">Fixpunktgleichung</h3>
+<div class="paragraph data-line-10">
 <p>Startwert: \$x_0\$ (in der Nähe von \$bar x\$)</p>
 </div>
-<div class="paragraph data-line-10">
+<div class="paragraph data-line-12">
 <p>\$x_1 = F(x_0)\$</p>
 </div>
-<div class="paragraph data-line-12">
+<div class="paragraph data-line-14">
 <p>\$x_2 = F(x_1)\$</p>
 </div>
-<div class="paragraph data-line-14">
+<div class="paragraph data-line-16">
 <p>&#8230;&#8203;</p>
 </div>
-<div class="paragraph data-line-16">
+<div class="paragraph data-line-18">
 <p>\$x_(n + 1) = F(x_n)\$</p>
 </div>
-<table class="tableblock frame-all grid-all stretch data-line-19">
+<table class="tableblock frame-all grid-all stretch data-line-21">
 <caption class="title">Table 1. Fixpunkt Iteration</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -486,7 +488,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </tbody>
 </table>
-<div class="hdlist data-line-28">
+<div class="hdlist data-line-30">
 <table>
 <tr>
 <td class="hdlist1">
@@ -515,11 +517,9 @@ Grenzfall
 </table>
 </div>
 </div>
-</div>
-<div class="sect1 data-line-32">
-<h2 id="_newton_verfahren">Newton Verfahren</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch data-line-35">
+<div class="sect2 data-line-34">
+<h3 id="_newton_verfahren">Newton Verfahren</h3>
+<table class="tableblock frame-all grid-all stretch data-line-37">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -539,11 +539,39 @@ Grenzfall
 </tbody>
 </table>
 </div>
+<div class="sect2 data-line-46">
+<h3 id="_banachscher_fixpunktsatz">Banachscher Fixpunktsatz</h3>
+<div class="paragraph data-line-48">
+<p>\$|F(x) - F(y)| &lt;= alpha |x-y| " für alle " x in [a,b]\$</p>
+</div>
+<div class="hdlist data-line-52">
+<div class="title">Abschätzungen</div>
+<table>
+<tr>
+<td class="hdlist1">
+a-priori
+</td>
+<td class="hdlist2">
+<p>\$|x_n - bar x| &lt;= a^n/(1-a) |x_1 - x_0|\$</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+a-posteriori
+</td>
+<td class="hdlist2">
+<p>\$|x_n - bar x| &lt;= a^n/(1-a) |x_n - x_(n-1)|\$</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-15 20:24:57 +0200
+Last updated 2020-10-18 19:26:31 +0200
 </div>
 </div>
 <script type="text/x-mathjax-config">

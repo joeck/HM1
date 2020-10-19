@@ -3,7 +3,9 @@
 :stem: asciimath
 :imagesdir: img
 
-== Fixpunktgleichung
+== Numerische Lösung von Nullstellenproblemen
+
+=== Fixpunktgleichung
 
 Startwert: stem:[x_0] (in der Nähe von stem:[bar x])
 
@@ -29,7 +31,7 @@ Anziehender Fixpunkt:: stem:[|F'(barx)| < 1] konvergiert
 Abstossender Fixpunkt:: stem:[|F'(barx)| > 1] divergiert das Verfahren und
 Grenzfall:: stem:[|F'(barx)| = 1]
 
-== Newton Verfahren
+=== Newton Verfahren
 
 
 |===
@@ -40,3 +42,14 @@ Grenzfall:: stem:[|F'(barx)| = 1]
 | stem:[x_(n+1) = x_n - (x_n - x_(n-1))/(f(x_n) - f(x_(n-1))) * f(x_n)]
 
 |===
+
+=== Banachscher Fixpunktsatz
+
+stem:[|F(x) - F(y)| <= alpha |x-y| " für alle " x in [a,b\]]
+
+Dabei gilt stem:[0 < alpha < 1]
+
+.Abschätzungen
+[horizontal]
+a-priori:: stem:[|x_n - bar x| <= a^n/(1-a) |x_1 - x_0|]
+a-posteriori:: stem:[|x_n - bar x| <= a/(1-a) |x_n - x_(n-1)|]
