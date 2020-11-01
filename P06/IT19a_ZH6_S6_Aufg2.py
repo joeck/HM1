@@ -31,10 +31,15 @@ def einsetzen(A):
     columns = len(A[0])
     print(rows)
     print(columns)
-    x3 = (A[-1][-1]/A[-1][-2])
-    x2 = (A[-2][-1] - (x3 * A[-2][-2]))/A[-2][-3]
-    print(x2)
-    print(x3)
+
+    x = []
+    for r in range(rows-1, -1, -1):
+        offset = abs(rows -1 - r)
+        sum = 0
+        for c in range(offset):
+            sum += x[c] * A[r][-1 - offset + c]
+        x.insert(0, (A[r][-1] - sum)/A[r][-2 - offset])
+    print(x)
 
 test = np.array([[20,10,0,150],[50,30,20,470],[200,150,100,2150]])
 test = np.array([[20,10,0],[50,30,20],[200,150,100]])
