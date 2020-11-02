@@ -45,7 +45,6 @@ def einsetzen(A):
     return x
 
 def determinante(A):
-    n = len(A[0])
     det = 1
     for i in range(len(A[0])):
         det *= A[i][i]
