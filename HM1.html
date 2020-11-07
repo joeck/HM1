@@ -577,11 +577,18 @@ a-posteriori
 <h2 id="_numerische_lösung_von_linearen_gleichungssystemen">Numerische Lösung von linearen Gleichungssystemen</h2>
 <div class="sectionbody">
 <div class="sect2 data-line-59">
-<h3 id="_obere_dreiecksmatrix">Obere Dreiecksmatrix</h3>
+<h3 id="_guass_algorithmus">Guass Algorithmus</h3>
 <div class="paragraph data-line-61">
+<p>\$Ax = b\$</p>
+</div>
+<div class="paragraph data-line-64">
+<div class="title">Beispiel Gaussalgorithmus</div>
+<p>\$A = [[20,10,0],[50,30,20], [200,150,100]], " " b = [[150], [470], [2150]]\$</p>
+</div>
+<div class="paragraph data-line-66">
 <p>\${:(),(50/20),(200/20):}[[20,10,0,=,150],[50,30,20,=,470], [200,150,100,=,2150]] rarr {:(),(),(50/5):}[[20,10,0,=,150],[0,5,20,=,95], [0,50,100,=,650]] rarr [[20,10,0,=,150],[0,5,20,=,95], [0,0,-100,=,-300]]\$</p>
 </div>
-<table class="tableblock frame-none grid-none stretch data-line-64">
+<table class="tableblock frame-none grid-none stretch data-line-69">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -596,12 +603,42 @@ a-posteriori
 </tbody>
 </table>
 </div>
+<div class="sect2 data-line-77">
+<h3 id="_lrlu_zerlegung">LR/LU Zerlegung</h3>
+<div class="paragraph data-line-79">
+<p>Das ursprüngliche Gleichungssystem \$bb (Ax = b)\$ lautet dann:</p>
+</div>
+<div class="paragraph data-line-81">
+<p>\$bb (LRx=b&lt;=&gt;Ly=b " und " Rx=y)\$</p>
+</div>
+<div class="paragraph data-line-84">
+<div class="title">Beispiel LR Zerlegung</div>
+<p>\$color(blue)(A = [[20,10,0],[50,30,20], [200,150,100]]), " " color(brown) (b = [[150], [470], [2150]])\$</p>
+</div>
+<div class="paragraph data-line-86">
+<p>\$
+    color(red){:(),(50/20),(200/20):}[[1,0,0],[0,1,0],[0,0,1]]color(blue)([[20,10,0],[50,30,20], [200,150,100]]) rarr
+    color(purple){:(),(),(50/5):}[[1,0,0],[color(red)(50/20),1,0],[color(red)(200/20),0,1]][[20,10,0],[0,5,20], [0,50,100]] rarr
+    [[1,0,0],[color(red)(50/20),1,0],[color(red)(200/20),color(purple)(50/5),1]][[20,10,0],[0,5,20], [0,0,-100]]
+    \$</p>
+</div>
+<div class="paragraph data-line-92">
+<p>\$bb (L = [[1,0,0],[50/20,1,0],[200/20,50/5,1]], " " R = [[20,10,0],[0,5,20], [0,0,-100]])\$</p>
+</div>
+<div class="paragraph data-line-94">
+<p>\$Ly = b &lt;=&gt; [[1,0,0],[50/20,1,0],[200/20,50/5,1]] color(brown)([[150], [470], [2150]]) rarr y_1 = 150, y_2 = 95, y_3 = -300
+-&gt; y = [[150], [95], [-300]]\$</p>
+</div>
+<div class="paragraph data-line-97">
+<p>\$Rx = y &lt;=&gt; [[20,10,0],[0,5,20], [0,0,-100]][[150], [95], [-300]] rarr x_1 = 4. " " x_2 = 7, " " x_3 = 3 rarr bb( x = [[4], [7], [3]])\$</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-01 17:55:40 +0100
+Last updated 2020-11-07 14:37:52 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">
