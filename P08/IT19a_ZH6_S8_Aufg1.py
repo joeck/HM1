@@ -1,7 +1,7 @@
 import numpy as np
 
-A = np.array([[1,-2,3], [-5,4,1], [2,-1,3]])
-b = np.array([1,9,5]).reshape(3,1)
+A = np.array([[1.,-2,3], [-5,4,1], [2,-1,3]])
+b = np.array([1.,9,5]).reshape(3,1)
 u1 = np.array([0.769, -0.594, 0.237]).reshape((3,1))
 
 h1 = np.eye(3, dtype=float) - 2 * np.matmul(u1, np.transpose(u1))
@@ -12,16 +12,28 @@ A2 = np.matmul(h1,A)[1:, 1:]
 # print(A2[:,0].reshape(2,1).shape[0])
 # print(np.linalg.norm(A2[:,0],2) * np.array([1,0]).reshape((2,1)) + A2[:,0].reshape(2,1))
 
-QR(A,b)
-
-def QR(A, b):
-    A = np.copy(A)
+def QR(AA, b):
+    A = np.copy(AA)
+    Ao = np.copy(AA)
     b = np.copy(b)
+    Qs = []
 
     cols = A.shape[0]
-    col1 = A[:,0].reshape(cols,1)
-    v1 = col1 + sign(A[0][0]) * np.linalg.norm(col1) * e(cols)
-    print(v1)
+    for i in range(cols, 1, -1):
+        print(i)
+        col1 = A[:,0].reshape(i,1)
+        v1 = col1 + sign(A[0][0]) * np.linalg.norm(col1,2) * e(i)
+        u1 = v1/np.linalg.norm(v1,2)
+        H1 = np.subtract(e(i), 2 * np.dot(u1, u1.T))
+        Q = padding(H1, Ao)
+        Qs.append(Q)
+        print(Q)
+        A = np.dot(Ao,Q)[1:,1:]
+        print(A)
+    print(Qs)
+
+    #R = 
+    #Q = 
 
 
 def sign(x):
@@ -30,6 +42,18 @@ def sign(x):
     return 1
 
 def e(x):
-    e = np.zeros(x).reshape(x, 1)
+    e = np.zeros(x, dtype=float).reshape(x, 1)
     e[0][0] = 1
     return e
+
+def padding(a, size):
+    if a.shape == size.shape: return a
+    result = np.zeros_like(size, dtype=float)
+    xo = size.shape[0] - a.shape[0]
+    result[xo:a.shape[0]+xo, xo:a.shape[1]+xo] = a
+    for i in range(0, xo, 1): result[i][i] = 1
+    return result
+
+QR(A, b)
+#t = np.array([[-0.91387533,  1.40599493],[ 0.40599493, -0.08612467]])
+#print(padding(t,A))
