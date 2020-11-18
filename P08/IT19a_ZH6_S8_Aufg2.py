@@ -14,10 +14,10 @@ Example: A = np.array([[1,2,-1],[4,-2,6],[3,1,0]])
 
 @author: knaa
 """
-
-def Serie8_Aufg2(A):
+import timeit
+import numpy as np
+def IT19a_ZH6_S8_Aufg2(A):
     
-    import numpy as np
     
     A = np.copy(A)                       #necessary to prevent changes in the original matrix A_in
     A = A.astype('float64')              #change to float
@@ -31,20 +31,67 @@ def Serie8_Aufg2(A):
     R = A
     
     for j in np.arange(0,n-1):
-        a = np.copy(???).reshape(n-j,1)     
-        e = np.eye(???)[:,0].reshape(n-j,1)
+        a = np.copy(R[j:,j:(j+1)]).reshape(n-j,1)     
+        e = np.eye(n-j, dtype=float)[:,0].reshape(n-j,1)
         length_a = np.linalg.norm(a)
-        if a[0] >= 0: sig = ???
-        else: sig = ??? 
-        v = ???
-        u = ???
-        H = ???
+        if a[0] >= 0: sig = 1
+        else: sig = -1
+        #print("a", a)
+        v = a + sig * length_a * e
+        #print("v", v)
+        u = v / np.linalg.norm(v)
+        #print("u", u)
+        H = np.eye(n-j, dtype=float) - 2 * u @ np.transpose(u)
+        #print("H", H)
         Qi = np.eye(n)
-        Qi[j:,j:] = ???
-        R = ???
-        Q = ???
+        Qi[j:,j:] = H
+        # print("Qi", Qi)
+        R = Qi @ R
+        Q = Q @ np.transpose(Qi)
+        # print("R", R)
         
     return(Q,R)
 
 
+At = np.array([[1.,2,-1], [4,-2,6],[3,1,0]])
+bt = np.array([9,-4,9]).reshape(3,1)
+print(IT19a_ZH6_S8_Aufg2(At))
+print(np.linalg.qr(At))
 
+
+A = np.array([
+        [1.,-2., 3.],
+        [-5., 4., 1.],
+        [2., -1., 3.]
+        ])
+
+b = np.array([
+        [1.],
+        [9.],
+        [5.]
+        ])
+
+t1 = timeit.repeat("IT19a_ZH6_S8_Aufg2(A)", "from __main__ import IT19a_ZH6_S8_Aufg2, A", number=100)
+t2 = timeit.repeat("np.linalg.qr(A)", "from __main__ import np, A", number=100)
+
+avg_t1 = np.average(t1)/100
+avg_t2 = np.average(t2)/100
+
+print("avg_t1 [A] = ", avg_t1, "\n")
+print("avg_t2 [A] = ", avg_t2, "\n")
+
+Test = np.random.rand(100, 100)
+
+t3 = timeit.repeat("IT19a_ZH6_S8_Aufg2(Test)", "from __main__ import IT19a_ZH6_S8_Aufg2, Test", number=100)
+t4 = timeit.repeat("np.linalg.qr(Test)", "from __main__ import np, Test", number=100)
+
+avg_t3 = np.average(t3)/100
+avg_t4 = np.average(t4)/100
+
+print("avg_t3 [Test] = ", avg_t3, "\n")
+print("avg_t4 [Test] = ", avg_t4, "\n")
+
+
+#
+# Feststellung:
+# Die linalg.qr ist performanter, besonders bei grossen Matrizen.

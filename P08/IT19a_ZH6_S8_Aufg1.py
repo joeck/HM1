@@ -24,16 +24,32 @@ def QR(AA, b):
         col1 = A[:,0].reshape(i,1)
         v1 = col1 + sign(A[0][0]) * np.linalg.norm(col1,2) * e(i)
         u1 = v1/np.linalg.norm(v1,2)
-        H1 = np.subtract(e(i), 2 * np.dot(u1, u1.T))
+        H1 = np.eye(i, dtype=float) - (np.multiply(2,np.dot(u1, u1.T)))
         Q = padding(H1, Ao)
         Qs.append(Q)
-        print(Q)
-        A = np.dot(Ao,Q)[1:,1:]
-        print(A)
+        print("H1", H1)
+        print("Q",Q)
+        print("Ao", Ao)
+        print("Ai", np.dot(Q, AA))
+        A = np.dot(Q,Ao)[1:,1:]
+        print("A",A)
     print(Qs)
 
     #R = 
-    #Q = 
+    R = np.eye(Ao.shape[0], dtype=float)
+    Q = np.eye(Ao.shape[0], dtype=float)
+    for val in Qs:
+        print(val)
+        print(val.T)
+        Q = np.dot(Q, val.T)
+        R = np.dot(R, val)
+        print("Rloop", R)
+
+    R = np.dot(R,Ao)
+    print("R",R)
+    print("Q",Q)
+    
+    print("A",np.dot(Q,R))
 
 
 def sign(x):
@@ -54,6 +70,10 @@ def padding(a, size):
     for i in range(0, xo, 1): result[i][i] = 1
     return result
 
-QR(A, b)
+
+At = np.array([[1.,2,-1], [4,-2,6],[3,1,0]])
+bt = np.array([9,-4,9]).reshape(3,1)
+
+QR(At, bt)
 #t = np.array([[-0.91387533,  1.40599493],[ 0.40599493, -0.08612467]])
 #print(padding(t,A))
