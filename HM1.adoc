@@ -95,3 +95,27 @@ stem:[Ly = b <=> [[1,0,0\],[50/20,1,0\],[200/20,50/5,1\]\] color(brown)([[150\],
 -> y = [[150\], [95\], [-300\]\]]
 
 stem:[Rx = y <=> [[20,10,0\],[0,5,20\], [0,0,-100\]\][[150\], [95\], [-300\]\] rarr x_1 = 4. " " x_2 = 7, " " x_3 = 3 rarr bb( x = [[4\], [7\], [3\]\])]
+
+== Eigenvektoren und Eigenwerte
+
+=== Eigenwert stem:[lambda]
+
+Eine Matrix stem:[A] hat maximal stem:[n]  Eigenwerte (stem:[lambda])
+
+Die Spur (Diagonalsumme) der Matrix A ist gleich der Summe der Eigenwerte
+
+Das Spektrum stem:[sigma(A)] ist die Menge aller Eigenwerte von stem:[A]
+
+*Die Eigenwerte einer Diagonalmatrix oder einer Dreiecksmatrix sind deren Diagonalelemente*
+
+stem:["tr"(A) = a_11 + a_22 + ... + a_(n n) = lambda_1 + lambda_2 + ... + lambda_n ]
+
+stem:["det"(A) = lamda_1 * lambda_2 * ... * lambda_n]
+
+stem:[A(x + y) = Ax + Ay = lambda x + lambda y = lambda (x+y)]
+
+stem:[A(mu x) = muAx = mu lambda x = lambda mu x]
+
+=== Eigenvektor stem:[x]
+
+Es gibt immer einen Unterraum an vektoren zu einem Eigenwert stem:[lambda]
