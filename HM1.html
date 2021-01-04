@@ -441,27 +441,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Höhere Mathematik 1</h1>
 </div>
 <div id="content">
-<div class="sect1 data-line-6">
+<div class="sect1 data-line-7">
+<h2 id="_maschinengenauigkeit">Maschinengenauigkeit</h2>
+<div class="sectionbody">
+<div class="paragraph data-line-9">
+<p>Die Maschinengenauigkeit ist die kleinste positive Maschinenzahl,für die auf dem Rechnergerade noch \$1 + eps != 1\$ gilt.</p>
+</div>
+<div class="paragraph data-line-11">
+<p>\$x = 0.m_1m_2m_3m_4...m_n * B^(exp)\$</p>
+</div>
+<div class="paragraph data-line-13">
+<p>\$eps = B/2 * B^(-n)\$</p>
+</div>
+<div class="paragraph data-line-15">
+<p>\$"Absolute Fehler: " abs (hat x - x)\$</p>
+</div>
+<div class="paragraph data-line-17">
+<p>\$"Relativer Fehler: " abs ((hat x - x )/ x)\$</p>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-19">
 <h2 id="_numerische_lösung_von_nullstellenproblemen">Numerische Lösung von Nullstellenproblemen</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-8">
+<div class="sect2 data-line-21">
 <h3 id="_fixpunktgleichung">Fixpunktgleichung</h3>
-<div class="paragraph data-line-10">
+<div class="paragraph data-line-23">
 <p>Startwert: \$x_0\$ (in der Nähe von \$bar x\$)</p>
 </div>
-<div class="paragraph data-line-12">
+<div class="paragraph data-line-25">
 <p>\$x_1 = F(x_0)\$</p>
 </div>
-<div class="paragraph data-line-14">
+<div class="paragraph data-line-27">
 <p>\$x_2 = F(x_1)\$</p>
 </div>
-<div class="paragraph data-line-16">
+<div class="paragraph data-line-29">
 <p>&#8230;&#8203;</p>
 </div>
-<div class="paragraph data-line-18">
+<div class="paragraph data-line-31">
 <p>\$x_(n + 1) = F(x_n)\$</p>
 </div>
-<table class="tableblock frame-all grid-all stretch data-line-21">
+<table class="tableblock frame-all grid-all stretch data-line-34">
 <caption class="title">Table 1. Fixpunkt Iteration</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -488,7 +508,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </tbody>
 </table>
-<div class="hdlist data-line-30">
+<div class="hdlist data-line-43">
 <table>
 <tr>
 <td class="hdlist1">
@@ -517,9 +537,9 @@ Grenzfall
 </table>
 </div>
 </div>
-<div class="sect2 data-line-34">
+<div class="sect2 data-line-47">
 <h3 id="_newton_verfahren">Newton Verfahren</h3>
-<table class="tableblock frame-all grid-all stretch data-line-37">
+<table class="tableblock frame-all grid-all stretch data-line-50">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -539,17 +559,17 @@ Grenzfall
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-46">
+<div class="sect2 data-line-59">
 <h3 id="_banachscher_fixpunktsatz">Banachscher Fixpunktsatz</h3>
-<div class="paragraph data-line-48">
+<div class="paragraph data-line-61">
 <p>\$|F(x) - F(y)| &lt;= alpha |x-y| " für alle " x in [a,b]\$</p>
 </div>
-<div class="paragraph data-line-50">
+<div class="paragraph data-line-63">
 <p>Dabei gilt \$0 &lt; alpha &lt; 1\$</p>
 </div>
-<div class="sect3 data-line-52">
+<div class="sect3 data-line-65">
 <h4 id="_abschätzungen">Abschätzungen</h4>
-<div class="hdlist data-line-54">
+<div class="hdlist data-line-67">
 <table>
 <tr>
 <td class="hdlist1">
@@ -573,22 +593,22 @@ a-posteriori
 </div>
 </div>
 </div>
-<div class="sect1 data-line-57">
+<div class="sect1 data-line-70">
 <h2 id="_numerische_lösung_von_linearen_gleichungssystemen">Numerische Lösung von linearen Gleichungssystemen</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-59">
+<div class="sect2 data-line-72">
 <h3 id="_guass_algorithmus">Guass Algorithmus</h3>
-<div class="paragraph data-line-61">
+<div class="paragraph data-line-74">
 <p>\$Ax = b\$</p>
 </div>
-<div class="paragraph data-line-64">
+<div class="paragraph data-line-77">
 <div class="title">Beispiel Gaussalgorithmus</div>
 <p>\$A = [[20,10,0],[50,30,20], [200,150,100]], " " b = [[150], [470], [2150]]\$</p>
 </div>
-<div class="paragraph data-line-66">
+<div class="paragraph data-line-79">
 <p>\${:(),(50/20),(200/20):}[[20,10,0,=,150],[50,30,20,=,470], [200,150,100,=,2150]] rarr {:(),(),(50/5):}[[20,10,0,=,150],[0,5,20,=,95], [0,50,100,=,650]] rarr [[20,10,0,=,150],[0,5,20,=,95], [0,0,-100,=,-300]]\$</p>
 </div>
-<table class="tableblock frame-none grid-none stretch data-line-69">
+<table class="tableblock frame-none grid-none stretch data-line-82">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -603,71 +623,71 @@ a-posteriori
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-77">
+<div class="sect2 data-line-90">
 <h3 id="_lrlu_zerlegung">LR/LU Zerlegung</h3>
-<div class="paragraph data-line-79">
+<div class="paragraph data-line-92">
 <p>Das ursprüngliche Gleichungssystem \$bb (Ax = b)\$ lautet dann:</p>
 </div>
-<div class="paragraph data-line-81">
+<div class="paragraph data-line-94">
 <p>\$bb (LRx=b&lt;=&gt;Ly=b " und " Rx=y)\$</p>
 </div>
-<div class="paragraph data-line-84">
+<div class="paragraph data-line-97">
 <div class="title">Beispiel LR Zerlegung</div>
 <p>\$color(blue)(A = [[20,10,0],[50,30,20], [200,150,100]]), " " color(brown) (b = [[150], [470], [2150]])\$</p>
 </div>
-<div class="paragraph data-line-86">
+<div class="paragraph data-line-99">
 <p>\$
     color(red){:(),(50/20),(200/20):}[[1,0,0],[0,1,0],[0,0,1]]color(blue)([[20,10,0],[50,30,20], [200,150,100]]) rarr
     color(purple){:(),(),(50/5):}[[1,0,0],[color(red)(50/20),1,0],[color(red)(200/20),0,1]][[20,10,0],[0,5,20], [0,50,100]] rarr
     [[1,0,0],[color(red)(50/20),1,0],[color(red)(200/20),color(purple)(50/5),1]][[20,10,0],[0,5,20], [0,0,-100]]
     \$</p>
 </div>
-<div class="paragraph data-line-92">
+<div class="paragraph data-line-105">
 <p>\$bb (L = [[1,0,0],[50/20,1,0],[200/20,50/5,1]], " " R = [[20,10,0],[0,5,20], [0,0,-100]])\$</p>
 </div>
-<div class="paragraph data-line-94">
+<div class="paragraph data-line-107">
 <p>\$Ly = b &lt;=&gt; [[1,0,0],[50/20,1,0],[200/20,50/5,1]] color(brown)([[150], [470], [2150]]) rarr y_1 = 150, y_2 = 95, y_3 = -300
 -&gt; y = [[150], [95], [-300]]\$</p>
 </div>
-<div class="paragraph data-line-97">
+<div class="paragraph data-line-110">
 <p>\$Rx = y &lt;=&gt; [[20,10,0],[0,5,20], [0,0,-100]][[150], [95], [-300]] rarr x_1 = 4. " " x_2 = 7, " " x_3 = 3 rarr bb( x = [[4], [7], [3]])\$</p>
 </div>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-99">
+<div class="sect1 data-line-112">
 <h2 id="_eigenvektoren_und_eigenwerte">Eigenvektoren und Eigenwerte</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-101">
+<div class="sect2 data-line-114">
 <h3 id="_eigenwert_lambda">Eigenwert \$lambda\$</h3>
-<div class="paragraph data-line-103">
+<div class="paragraph data-line-116">
 <p>Eine Matrix \$A\$ hat maximal \$n\$  Eigenwerte (\$lambda\$)</p>
 </div>
-<div class="paragraph data-line-105">
+<div class="paragraph data-line-118">
 <p>Die Spur (Diagonalsumme) der Matrix A ist gleich der Summe der Eigenwerte</p>
 </div>
-<div class="paragraph data-line-107">
+<div class="paragraph data-line-120">
 <p>Das Spektrum \$sigma(A)\$ ist die Menge aller Eigenwerte von \$A\$</p>
 </div>
-<div class="paragraph data-line-109">
+<div class="paragraph data-line-122">
 <p><strong>Die Eigenwerte einer Diagonalmatrix oder einer Dreiecksmatrix sind deren Diagonalelemente</strong></p>
 </div>
-<div class="paragraph data-line-111">
+<div class="paragraph data-line-124">
 <p>\$"tr"(A) = a_11 + a_22 + ... + a_(n n) = lambda_1 + lambda_2 + ... + lambda_n \$</p>
 </div>
-<div class="paragraph data-line-113">
+<div class="paragraph data-line-126">
 <p>\$"det"(A) = lamda_1 * lambda_2 * ... * lambda_n\$</p>
 </div>
-<div class="paragraph data-line-115">
+<div class="paragraph data-line-128">
 <p>\$A(x + y) = Ax + Ay = lambda x + lambda y = lambda (x+y)\$</p>
 </div>
-<div class="paragraph data-line-117">
+<div class="paragraph data-line-130">
 <p>\$A(mu x) = muAx = mu lambda x = lambda mu x\$</p>
 </div>
 </div>
-<div class="sect2 data-line-119">
+<div class="sect2 data-line-132">
 <h3 id="_eigenvektor_x">Eigenvektor \$x\$</h3>
-<div class="paragraph data-line-121">
+<div class="paragraph data-line-134">
 <p>Es gibt immer einen Unterraum an vektoren zu einem Eigenwert \$lambda\$</p>
 </div>
 </div>
@@ -676,7 +696,7 @@ a-posteriori
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-12-15 20:25:47 +0100
+Last updated 2021-01-05 00:36:00 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">

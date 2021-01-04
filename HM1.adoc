@@ -3,6 +3,19 @@
 :stem: asciimath
 :imagesdir: img
 
+
+== Maschinengenauigkeit
+
+Die Maschinengenauigkeit ist die kleinste positive Maschinenzahl,für die auf dem Rechnergerade noch stem:[1 + eps != 1] gilt.
+
+stem:[x = 0.m_1m_2m_3m_4...m_n * B^(exp)]
+
+stem:[eps = B/2 * B^(-n)]
+
+stem:["Absolute Fehler: " abs (hat x - x)]
+
+stem:["Relativer Fehler: " abs ((hat x - x )/ x)]
+
 == Numerische Lösung von Nullstellenproblemen
 
 === Fixpunktgleichung
