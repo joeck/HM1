@@ -1,4 +1,4 @@
-= Höhere Mathematik 1 
+= HM1 Zusammenfassung
 
 :stem: asciimath
 :imagesdir: img
@@ -15,6 +15,10 @@ stem:[eps = B/2 * B^(-n)]
 stem:["Absolute Fehler: " abs (hat x - x)]
 
 stem:["Relativer Fehler: " abs ((hat x - x )/ x)]
+
+=== Kondition
+
+stem:["Konditionszahl: " (abs (f'(x)) * abs x)/ (abs (f(x))) ]
 
 == Numerische Lösung von Nullstellenproblemen
 
@@ -43,6 +47,13 @@ stem:[x_(n + 1) = F(x_n)]
 Anziehender Fixpunkt:: stem:[|F'(barx)| < 1] konvergiert
 Abstossender Fixpunkt:: stem:[|F'(barx)| > 1] divergiert das Verfahren und
 Grenzfall:: stem:[|F'(barx)| = 1]
+
+.Beispiel
+stem:[p(x) = x^3 -x +0.3]
+
+stem:[p(x) = 0 <=> F(x) -= x^3 + 0.3 = x]
+
+stem:[x_(n+1) = F(x_n) = x_n^3 + 0.3]
 
 === Newton Verfahren
 
@@ -108,6 +119,18 @@ stem:[Ly = b <=> [[1,0,0\],[50/20,1,0\],[200/20,50/5,1\]\] color(brown)([[150\],
 -> y = [[150\], [95\], [-300\]\]]
 
 stem:[Rx = y <=> [[20,10,0\],[0,5,20\], [0,0,-100\]\][[150\], [95\], [-300\]\] rarr x_1 = 4. " " x_2 = 7, " " x_3 = 3 rarr bb( x = [[4\], [7\], [3\]\])]
+
+=== QR Zerlegung
+
+stem:[A = QR]
+
+Orthogonale Matrix stem:[Q] ist regulär mit stem:[Q^-1 = Q^T]
+
+==== Householder-Matrizen
+
+stem:[H := I_n - 2u u^T]
+
+stem:[H] ist symetrisch und orthogonal: stem:[H = H^T = H^-1 "  dadurch folgt  " H * H = I_n]
 
 == Eigenvektoren und Eigenwerte
 

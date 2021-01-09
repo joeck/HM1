@@ -6,10 +6,13 @@ def IT19a_ZH6_S6_Aufg2(A,b):
     aODM = oDM[:,:-1]
     det = determinante(aODM)
 
-    print("\n-------------")
-    print("Dreiecksmatrix: \n" + str(aODM))
+    print("Dreiecksmatrix: ")
+    print(aODM)
     print("Determinante: " + str(det))
-    print("Solution: " + str(x))
+    print("Solution: ")
+    print(x)
+    print("Linalg.solve:")
+    print(np.linalg.solve(A, b))
 
 def obereDreiecksMatrix(A, b):
     rows = A[0]

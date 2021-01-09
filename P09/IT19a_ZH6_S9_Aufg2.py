@@ -35,7 +35,8 @@ Ag = A - 100
 
 print(f"dx max: {dx_max}\ndx obs: {dx_obs}\nx:\n{x}\nx gestört:\n{xg}\n")
 
-def Gruppe_6_S9_Aufg2(A, Ag, b, bg):
+#Serie 9 Aufgabe 2
+def Gruppe_6_S9_Aufg2(A, Ag, b, bg): #A, A gestört, b, b gestört
     norm = np.linalg.norm
 
     x = np.linalg.solve(A, b)
@@ -52,4 +53,4 @@ def Gruppe_6_S9_Aufg2(A, Ag, b, bg):
     
     dx_obs = norm(x - xg, np.inf) / norm(x, np.inf)
     
-    return [x, xg, dx_max, dx_obs]
+    return [x, xg, dx_max, dx_obs] #x, x gestört, obere Schranke des relativen Fehlers, tatsächlicher relatativer fehler

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Höhere Mathematik 1</title>
+<title>HM1 Zusammenfassung</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article data-line-1">
 <div id="header">
-<h1>Höhere Mathematik 1</h1>
+<h1>HM1 Zusammenfassung</h1>
 </div>
 <div id="content">
 <div class="sect1 data-line-7">
@@ -459,29 +459,35 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph data-line-17">
 <p>\$"Relativer Fehler: " abs ((hat x - x )/ x)\$</p>
 </div>
+<div class="sect2 data-line-19">
+<h3 id="_kondition">Kondition</h3>
+<div class="paragraph data-line-21">
+<p>\$"Konditionszahl: " (abs (f'(x)) * abs x)/ (abs (f(x))) \$</p>
 </div>
 </div>
-<div class="sect1 data-line-19">
+</div>
+</div>
+<div class="sect1 data-line-23">
 <h2 id="_numerische_lösung_von_nullstellenproblemen">Numerische Lösung von Nullstellenproblemen</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-21">
+<div class="sect2 data-line-25">
 <h3 id="_fixpunktgleichung">Fixpunktgleichung</h3>
-<div class="paragraph data-line-23">
+<div class="paragraph data-line-27">
 <p>Startwert: \$x_0\$ (in der Nähe von \$bar x\$)</p>
 </div>
-<div class="paragraph data-line-25">
+<div class="paragraph data-line-29">
 <p>\$x_1 = F(x_0)\$</p>
 </div>
-<div class="paragraph data-line-27">
+<div class="paragraph data-line-31">
 <p>\$x_2 = F(x_1)\$</p>
 </div>
-<div class="paragraph data-line-29">
+<div class="paragraph data-line-33">
 <p>&#8230;&#8203;</p>
 </div>
-<div class="paragraph data-line-31">
+<div class="paragraph data-line-35">
 <p>\$x_(n + 1) = F(x_n)\$</p>
 </div>
-<table class="tableblock frame-all grid-all stretch data-line-34">
+<table class="tableblock frame-all grid-all stretch data-line-38">
 <caption class="title">Table 1. Fixpunkt Iteration</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -508,7 +514,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </tbody>
 </table>
-<div class="hdlist data-line-43">
+<div class="hdlist data-line-47">
 <table>
 <tr>
 <td class="hdlist1">
@@ -536,10 +542,20 @@ Grenzfall
 </tr>
 </table>
 </div>
+<div class="paragraph data-line-52">
+<div class="title">Beispiel</div>
+<p>\$p(x) = x^3 -x +0.3\$</p>
 </div>
-<div class="sect2 data-line-47">
+<div class="paragraph data-line-54">
+<p>\$p(x) = 0 &lt;=&gt; F(x) -= x^3 + 0.3 = x\$</p>
+</div>
+<div class="paragraph data-line-56">
+<p>\$x_(n+1) = F(x_n) = x_n^3 + 0.3\$</p>
+</div>
+</div>
+<div class="sect2 data-line-58">
 <h3 id="_newton_verfahren">Newton Verfahren</h3>
-<table class="tableblock frame-all grid-all stretch data-line-50">
+<table class="tableblock frame-all grid-all stretch data-line-61">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -559,17 +575,17 @@ Grenzfall
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-59">
+<div class="sect2 data-line-70">
 <h3 id="_banachscher_fixpunktsatz">Banachscher Fixpunktsatz</h3>
-<div class="paragraph data-line-61">
+<div class="paragraph data-line-72">
 <p>\$|F(x) - F(y)| &lt;= alpha |x-y| " für alle " x in [a,b]\$</p>
 </div>
-<div class="paragraph data-line-63">
+<div class="paragraph data-line-74">
 <p>Dabei gilt \$0 &lt; alpha &lt; 1\$</p>
 </div>
-<div class="sect3 data-line-65">
+<div class="sect3 data-line-76">
 <h4 id="_abschätzungen">Abschätzungen</h4>
-<div class="hdlist data-line-67">
+<div class="hdlist data-line-78">
 <table>
 <tr>
 <td class="hdlist1">
@@ -593,22 +609,22 @@ a-posteriori
 </div>
 </div>
 </div>
-<div class="sect1 data-line-70">
+<div class="sect1 data-line-81">
 <h2 id="_numerische_lösung_von_linearen_gleichungssystemen">Numerische Lösung von linearen Gleichungssystemen</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-72">
+<div class="sect2 data-line-83">
 <h3 id="_guass_algorithmus">Guass Algorithmus</h3>
-<div class="paragraph data-line-74">
+<div class="paragraph data-line-85">
 <p>\$Ax = b\$</p>
 </div>
-<div class="paragraph data-line-77">
+<div class="paragraph data-line-88">
 <div class="title">Beispiel Gaussalgorithmus</div>
 <p>\$A = [[20,10,0],[50,30,20], [200,150,100]], " " b = [[150], [470], [2150]]\$</p>
 </div>
-<div class="paragraph data-line-79">
+<div class="paragraph data-line-90">
 <p>\${:(),(50/20),(200/20):}[[20,10,0,=,150],[50,30,20,=,470], [200,150,100,=,2150]] rarr {:(),(),(50/5):}[[20,10,0,=,150],[0,5,20,=,95], [0,50,100,=,650]] rarr [[20,10,0,=,150],[0,5,20,=,95], [0,0,-100,=,-300]]\$</p>
 </div>
-<table class="tableblock frame-none grid-none stretch data-line-82">
+<table class="tableblock frame-none grid-none stretch data-line-93">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -623,71 +639,89 @@ a-posteriori
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-90">
+<div class="sect2 data-line-101">
 <h3 id="_lrlu_zerlegung">LR/LU Zerlegung</h3>
-<div class="paragraph data-line-92">
+<div class="paragraph data-line-103">
 <p>Das ursprüngliche Gleichungssystem \$bb (Ax = b)\$ lautet dann:</p>
 </div>
-<div class="paragraph data-line-94">
+<div class="paragraph data-line-105">
 <p>\$bb (LRx=b&lt;=&gt;Ly=b " und " Rx=y)\$</p>
 </div>
-<div class="paragraph data-line-97">
+<div class="paragraph data-line-108">
 <div class="title">Beispiel LR Zerlegung</div>
 <p>\$color(blue)(A = [[20,10,0],[50,30,20], [200,150,100]]), " " color(brown) (b = [[150], [470], [2150]])\$</p>
 </div>
-<div class="paragraph data-line-99">
+<div class="paragraph data-line-110">
 <p>\$
     color(red){:(),(50/20),(200/20):}[[1,0,0],[0,1,0],[0,0,1]]color(blue)([[20,10,0],[50,30,20], [200,150,100]]) rarr
     color(purple){:(),(),(50/5):}[[1,0,0],[color(red)(50/20),1,0],[color(red)(200/20),0,1]][[20,10,0],[0,5,20], [0,50,100]] rarr
     [[1,0,0],[color(red)(50/20),1,0],[color(red)(200/20),color(purple)(50/5),1]][[20,10,0],[0,5,20], [0,0,-100]]
     \$</p>
 </div>
-<div class="paragraph data-line-105">
+<div class="paragraph data-line-116">
 <p>\$bb (L = [[1,0,0],[50/20,1,0],[200/20,50/5,1]], " " R = [[20,10,0],[0,5,20], [0,0,-100]])\$</p>
 </div>
-<div class="paragraph data-line-107">
+<div class="paragraph data-line-118">
 <p>\$Ly = b &lt;=&gt; [[1,0,0],[50/20,1,0],[200/20,50/5,1]] color(brown)([[150], [470], [2150]]) rarr y_1 = 150, y_2 = 95, y_3 = -300
 -&gt; y = [[150], [95], [-300]]\$</p>
 </div>
-<div class="paragraph data-line-110">
+<div class="paragraph data-line-121">
 <p>\$Rx = y &lt;=&gt; [[20,10,0],[0,5,20], [0,0,-100]][[150], [95], [-300]] rarr x_1 = 4. " " x_2 = 7, " " x_3 = 3 rarr bb( x = [[4], [7], [3]])\$</p>
 </div>
 </div>
+<div class="sect2 data-line-123">
+<h3 id="_qr_zerlegung">QR Zerlegung</h3>
+<div class="paragraph data-line-125">
+<p>\$A = QR\$</p>
+</div>
+<div class="paragraph data-line-127">
+<p>Orthogonale Matrix \$Q\$ ist regulär mit \$Q^-1 = Q^T\$</p>
+</div>
+<div class="sect3 data-line-129">
+<h4 id="_householder_matrizen">Householder-Matrizen</h4>
+<div class="paragraph data-line-131">
+<p>\$H := I_n - 2u u^T\$</p>
+</div>
+<div class="paragraph data-line-133">
+<p>\$H\$ ist symetrisch und orthogonal: \$H = H^T = H^-1 "  dadurch folgt  " H * H = I_n\$</p>
 </div>
 </div>
-<div class="sect1 data-line-112">
+</div>
+</div>
+</div>
+<div class="sect1 data-line-135">
 <h2 id="_eigenvektoren_und_eigenwerte">Eigenvektoren und Eigenwerte</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-114">
+<div class="sect2 data-line-137">
 <h3 id="_eigenwert_lambda">Eigenwert \$lambda\$</h3>
-<div class="paragraph data-line-116">
+<div class="paragraph data-line-139">
 <p>Eine Matrix \$A\$ hat maximal \$n\$  Eigenwerte (\$lambda\$)</p>
 </div>
-<div class="paragraph data-line-118">
+<div class="paragraph data-line-141">
 <p>Die Spur (Diagonalsumme) der Matrix A ist gleich der Summe der Eigenwerte</p>
 </div>
-<div class="paragraph data-line-120">
+<div class="paragraph data-line-143">
 <p>Das Spektrum \$sigma(A)\$ ist die Menge aller Eigenwerte von \$A\$</p>
 </div>
-<div class="paragraph data-line-122">
+<div class="paragraph data-line-145">
 <p><strong>Die Eigenwerte einer Diagonalmatrix oder einer Dreiecksmatrix sind deren Diagonalelemente</strong></p>
 </div>
-<div class="paragraph data-line-124">
+<div class="paragraph data-line-147">
 <p>\$"tr"(A) = a_11 + a_22 + ... + a_(n n) = lambda_1 + lambda_2 + ... + lambda_n \$</p>
 </div>
-<div class="paragraph data-line-126">
+<div class="paragraph data-line-149">
 <p>\$"det"(A) = lamda_1 * lambda_2 * ... * lambda_n\$</p>
 </div>
-<div class="paragraph data-line-128">
+<div class="paragraph data-line-151">
 <p>\$A(x + y) = Ax + Ay = lambda x + lambda y = lambda (x+y)\$</p>
 </div>
-<div class="paragraph data-line-130">
+<div class="paragraph data-line-153">
 <p>\$A(mu x) = muAx = mu lambda x = lambda mu x\$</p>
 </div>
 </div>
-<div class="sect2 data-line-132">
+<div class="sect2 data-line-155">
 <h3 id="_eigenvektor_x">Eigenvektor \$x\$</h3>
-<div class="paragraph data-line-134">
+<div class="paragraph data-line-157">
 <p>Es gibt immer einen Unterraum an vektoren zu einem Eigenwert \$lambda\$</p>
 </div>
 </div>
@@ -696,7 +730,7 @@ a-posteriori
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-01-05 00:36:00 +0100
+Last updated 2021-01-09 16:46:41 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">
