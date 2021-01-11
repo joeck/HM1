@@ -8,7 +8,7 @@
 
 Die Maschinengenauigkeit ist die kleinste positive Maschinenzahl,für die auf dem Rechnergerade noch stem:[1 + eps != 1] gilt.
 
-stem:[x = 0.m_1m_2m_3m_4...m_n * B^(exp)]
+stem:[x = 0.1m_1m_2m_3m_4...m_n * B^(exp)]
 
 stem:[eps = B/2 * B^(-n)]
 
@@ -73,10 +73,12 @@ stem:[|F(x) - F(y)| <= alpha |x-y| " für alle " x in [a,b\]]
 
 Dabei gilt stem:[0 < alpha < 1]
 
+stem:[alpha = max_(x_0 in [a,b\]) abs (F'(x_0))]
+
 ==== Abschätzungen
 [horizontal]
-a-priori:: stem:[|x_n - bar x| <= a^n/(1-a) |x_1 - x_0|]
-a-posteriori:: stem:[|x_n - bar x| <= a/(1-a) |x_n - x_(n-1)|]
+a-priori:: stem:[|x_n - bar x| <= alpha^n/(1-alpha) |x_1 - x_0|]
+a-posteriori:: stem:[|x_n - bar x| <= alpha/(1-alpha) |x_n - x_(n-1)|]
 
 == Numerische Lösung von linearen Gleichungssystemen
 
