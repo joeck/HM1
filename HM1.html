@@ -673,58 +673,77 @@ a-posteriori
 </div>
 </div>
 <div class="sect2 data-line-125">
-<h3 id="_qr_zerlegung">QR Zerlegung</h3>
+<h3 id="_ldr_zerlegung">LDR Zerlegung</h3>
 <div class="paragraph data-line-127">
+<p>\$A = [[color(red)(15),0, 1],[1,color(red)(3),7], [0,1,color(red)(6)]] = L + D + R = [[0,0, 0],[1,0,0], [0,1, 0]] +
+[[color(red)(15),0,0],[0,color(red)(3),0], [0,0,color(red)(6)]] + [[0,0,1],[0,0,7], [0,0,0]] \$</p>
+</div>
+<div class="admonitionblock important data-line-130">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/important.png" alt="Important">
+</td>
+<td class="content">
+Diagonal cannot have 0&#8217;s (Diagonaldominanz) &#8594; Zeilenvertauschung!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2 data-line-132">
+<h3 id="_qr_zerlegung">QR Zerlegung</h3>
+<div class="paragraph data-line-134">
 <p>\$A = QR\$</p>
 </div>
-<div class="paragraph data-line-129">
+<div class="paragraph data-line-136">
 <p>Orthogonale Matrix \$Q\$ ist regulär mit \$Q^-1 = Q^T\$</p>
 </div>
-<div class="sect3 data-line-131">
+<div class="sect3 data-line-138">
 <h4 id="_householder_matrizen">Householder-Matrizen</h4>
-<div class="paragraph data-line-133">
+<div class="paragraph data-line-140">
 <p>\$H := I_n - 2u u^T\$</p>
 </div>
-<div class="paragraph data-line-135">
+<div class="paragraph data-line-142">
 <p>\$H\$ ist symetrisch und orthogonal: \$H = H^T = H^-1 "  dadurch folgt  " H * H = I_n\$</p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-137">
+<div class="sect1 data-line-144">
 <h2 id="_eigenvektoren_und_eigenwerte">Eigenvektoren und Eigenwerte</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-139">
+<div class="sect2 data-line-146">
 <h3 id="_eigenwert_lambda">Eigenwert \$lambda\$</h3>
-<div class="paragraph data-line-141">
+<div class="paragraph data-line-148">
 <p>Eine Matrix \$A\$ hat maximal \$n\$  Eigenwerte (\$lambda\$)</p>
 </div>
-<div class="paragraph data-line-143">
+<div class="paragraph data-line-150">
 <p>Die Spur (Diagonalsumme) der Matrix A ist gleich der Summe der Eigenwerte</p>
 </div>
-<div class="paragraph data-line-145">
+<div class="paragraph data-line-152">
 <p>Das Spektrum \$sigma(A)\$ ist die Menge aller Eigenwerte von \$A\$</p>
 </div>
-<div class="paragraph data-line-147">
+<div class="paragraph data-line-154">
 <p><strong>Die Eigenwerte einer Diagonalmatrix oder einer Dreiecksmatrix sind deren Diagonalelemente</strong></p>
 </div>
-<div class="paragraph data-line-149">
+<div class="paragraph data-line-156">
 <p>\$"tr"(A) = a_11 + a_22 + ... + a_(n n) = lambda_1 + lambda_2 + ... + lambda_n \$</p>
 </div>
-<div class="paragraph data-line-151">
+<div class="paragraph data-line-158">
 <p>\$"det"(A) = lamda_1 * lambda_2 * ... * lambda_n\$</p>
 </div>
-<div class="paragraph data-line-153">
+<div class="paragraph data-line-160">
 <p>\$A(x + y) = Ax + Ay = lambda x + lambda y = lambda (x+y)\$</p>
 </div>
-<div class="paragraph data-line-155">
+<div class="paragraph data-line-162">
 <p>\$A(mu x) = muAx = mu lambda x = lambda mu x\$</p>
 </div>
 </div>
-<div class="sect2 data-line-157">
+<div class="sect2 data-line-164">
 <h3 id="_eigenvektor_x">Eigenvektor \$x\$</h3>
-<div class="paragraph data-line-159">
+<div class="paragraph data-line-166">
 <p>Es gibt immer einen Unterraum an vektoren zu einem Eigenwert \$lambda\$</p>
 </div>
 </div>
@@ -733,7 +752,7 @@ a-posteriori
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-01-11 16:01:41 +0100
+Last updated 2021-01-12 12:49:43 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">

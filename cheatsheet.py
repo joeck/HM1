@@ -24,6 +24,20 @@ while (count < 10 ):
     count += 1
 print(x1)
 
+def fixpunktIteraion(f,x0,epsIncr,alpha): #F(x) fixIt gleichung, startpunkt, genauigkeit, lipschitzkonstante 
+    import numpy as np
+    k=0
+    notConverged=True
+    N=1000 #max iterationen
+    
+    while (notConverged and k<N):
+        x1=f(x0) #fixpunktiterationsschritt
+        error=alpha/(1-alpha)*np.abs(x1-x0) # a-posteriori
+        notConverged=error>epsIncr #abbruchbedingung genauigkeit
+        k=k+1
+        x0=x1
+    return(x1,k)
+
 #Newtonverfahren
 def newton(f, f1, x):
     return x - f(x)/f1(x)
@@ -274,6 +288,12 @@ def Gruppe_6_S9_Aufg2(A, Ag, b, bg): #A, A gestört, b, b gestört
     dx_obs = norm(x - xg, np.inf) / norm(x, np.inf)
     
     return [x, xg, dx_max, dx_obs] #x, x gestört, obere Schranke des relativen Fehlers, tatsächlicher relatativer fehler
+
+#LDR
+A=np.array([[15, 0, 1], [1,3,7], [0, 1, 6]])
+D=np.diag(np.diag(A))
+R=np.triu(A)-D
+L=np.tril(A)-D
 
 #Jacobi
 def F_jacobi(x, L, D, R):

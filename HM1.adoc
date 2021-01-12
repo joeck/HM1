@@ -2,7 +2,7 @@
 
 :stem: asciimath
 :imagesdir: img
-
+:icons:
 
 == Maschinengenauigkeit
 
@@ -93,7 +93,7 @@ stem:[{:(),(50/20),(200/20):}[[20,10,0,=,150\],[50,30,20,=,470\], [200,150,100,=
 
 [grid="none", frame="none"]
 |===
-stem:[-100 x_3 = -300 => bb (x_3 = 3)] |
+| stem:[-100 x_3 = -300 => bb (x_3 = 3)] |
 stem:[5x_2 + 20x_3 = 95 => bb(x_2 = 7)] |
 stem:[20x_1 + 10x_2 + 0x_3 = 150 => bb(x_1 = 4)]
 |===
@@ -121,6 +121,13 @@ stem:[Ly = b <=> [[1,0,0\],[50/20,1,0\],[200/20,50/5,1\]\] color(brown)([[150\],
 -> y = [[150\], [95\], [-300\]\]]
 
 stem:[Rx = y <=> [[20,10,0\],[0,5,20\], [0,0,-100\]\][[150\], [95\], [-300\]\] rarr x_1 = 4. " " x_2 = 7, " " x_3 = 3 rarr bb( x = [[4\], [7\], [3\]\])]
+
+=== LDR Zerlegung
+
+stem:[A = [[color(red)(15),0, 1\],[1,color(red)(3),7\], [0,1,color(red)(6)\]\] = L + D + R = [[0,0, 0\],[1,0,0\], [0,1, 0\]\] + 
+[[color(red)(15),0,0\],[0,color(red)(3),0\], [0,0,color(red)(6)\]\] + [[0,0,1\],[0,0,7\], [0,0,0\]\] ]
+
+IMPORTANT: Diagonal cannot have 0's (Diagonaldominanz) -> Zeilenvertauschung!
 
 === QR Zerlegung
 
