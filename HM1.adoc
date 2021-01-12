@@ -1,8 +1,8 @@
 = HM1 Zusammenfassung
-
 :stem: asciimath
 :imagesdir: img
-:icons:
+:icons: font
+:toc:
 
 == Maschinengenauigkeit
 
