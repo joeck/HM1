@@ -42,7 +42,7 @@ def fixpunktIteraion(f,x0,epsIncr,alpha): #F(x) fixIt gleichung, startpunkt, gen
 def newton(f, f1, x):
     return x - f(x)/f1(x)
 
-def newtonVerfahren(f, f1, x, tol)
+#def newtonVerfahren(f, f1, x, tol)
 
 def newton_easy(f, f1, x, x0): #x0 ist immer startwert
     return x - f(x)/f1(x0)
