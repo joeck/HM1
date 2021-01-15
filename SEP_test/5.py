@@ -57,7 +57,9 @@ def GaussVerfahren(A,b):
 
 print(GaussVerfahren(A, b))
 
-#c
+#c)
+# A = np.array([[240, 120, 80], [60, 180, 170], [60, 90, 500]])
+# b = np.array([[3080, 4070, 5030]]).T
 bd = 0.95*b
 deltaB = np.subtract(b, bd)
 err = np.linalg.norm(np.linalg.inv(A), np.inf) * np.linalg.norm(deltaB, np.inf)
