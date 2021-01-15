@@ -1,7 +1,7 @@
 import numpy as np
 
-A = np.array([[240, 120, 80], [60, 180, 170], [60, 90, 500]])
-b = np.array([[3080, 4070, 5030]]).T
+A = np.array([[240, 120, 80], [60, 180, 170], [60, 90, 500]], dtype="float64")
+b = np.array([[3080, 4070, 5030]], dtype="float64").T
 
 def obereDreiecksMatrix(A, b):
     rows = A[0]
