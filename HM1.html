@@ -466,7 +466,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_eigenvektoren_und_eigenwerte">Eigenvektoren und Eigenwerte</a>
 <ul class="sectlevel2">
 <li><a href="#_eigenwert_lambda">Eigenwert \$lambda\$</a></li>
+<li><a href="#_eigenraum">Eigenraum</a></li>
 <li><a href="#_eigenvektor_x">Eigenvektor \$x\$</a></li>
+</ul>
+</li>
+<li><a href="#_nützliches">Nützliches</a>
+<ul class="sectlevel2">
+<li><a href="#_komplexe_zahlen">Komplexe Zahlen</a></li>
+<li><a href="#_determinante">Determinante</a></li>
 </ul>
 </li>
 </ul>
@@ -749,42 +756,131 @@ Diagonal cannot have 0&#8217;s (Diagonaldominanz) &#8594; Zeilenvertauschung!
 <div class="sect2 data-line-146">
 <h3 id="_eigenwert_lambda">Eigenwert \$lambda\$</h3>
 <div class="paragraph data-line-148">
-<p>Eine Matrix \$A\$ hat maximal \$n\$  Eigenwerte (\$lambda\$)</p>
+<p>\$det(A-lambda*I)*x = vec0\$</p>
 </div>
 <div class="paragraph data-line-150">
-<p>Die Spur (Diagonalsumme) der Matrix A ist gleich der Summe der Eigenwerte</p>
+<p>\$p(lambda) = det(A-lambda*I) " Charakterisches Polynom"\$</p>
 </div>
 <div class="paragraph data-line-152">
-<p>Das Spektrum \$sigma(A)\$ ist die Menge aller Eigenwerte von \$A\$</p>
+<p><strong>Nullstellen</strong> von \$p(lambda)\$ sind die <strong>Eigenwerte</strong> von \$A\$</p>
 </div>
 <div class="paragraph data-line-154">
-<p><strong>Die Eigenwerte einer Diagonalmatrix oder einer Dreiecksmatrix sind deren Diagonalelemente</strong></p>
+<p>Eine Matrix \$A\$ hat maximal \$n\$  Eigenwerte (\$lambda\$)</p>
 </div>
 <div class="paragraph data-line-156">
-<p>\$"tr"(A) = a_11 + a_22 + ... + a_(n n) = lambda_1 + lambda_2 + ... + lambda_n \$</p>
+<p>Die Spur (Diagonalsumme) der Matrix A ist gleich der Summe der Eigenwerte</p>
 </div>
 <div class="paragraph data-line-158">
-<p>\$"det"(A) = lamda_1 * lambda_2 * ... * lambda_n\$</p>
+<p>Das Spektrum \$sigma(A)\$ ist die Menge aller Eigenwerte von \$A\$</p>
 </div>
 <div class="paragraph data-line-160">
-<p>\$A(x + y) = Ax + Ay = lambda x + lambda y = lambda (x+y)\$</p>
+<p><strong>Die Eigenwerte einer Diagonalmatrix oder einer Dreiecksmatrix sind deren Diagonalelemente</strong></p>
 </div>
 <div class="paragraph data-line-162">
+<p>\$"tr"(A) = a_11 + a_22 + ... + a_(n n) = lambda_1 + lambda_2 + ... + lambda_n \$</p>
+</div>
+<div class="paragraph data-line-164">
+<p>\$"det"(A) = lamda_1 * lambda_2 * ... * lambda_n\$</p>
+</div>
+<div class="paragraph data-line-166">
+<p>\$A(x + y) = Ax + Ay = lambda x + lambda y = lambda (x+y)\$</p>
+</div>
+<div class="paragraph data-line-168">
 <p>\$A(mu x) = muAx = mu lambda x = lambda mu x\$</p>
 </div>
 </div>
-<div class="sect2 data-line-164">
+<div class="sect2 data-line-170">
+<h3 id="_eigenraum">Eigenraum</h3>
+<div class="paragraph data-line-172">
+<p>Eigenraum zu \$lambda_i = i\$</p>
+</div>
+<div class="paragraph data-line-174">
+<p>\$ubrace(A-lambda_i*I)_B * x = vec0\$</p>
+</div>
+<div class="paragraph data-line-176">
+<p>\$B = obrace(((2,5),(-1,-2)))^A - obrace(((i, 0), (0,i)))^(lambda_i * I) = ((2-i,5),(-1,-2-i)) =&gt; "Gaussverfahren"\$</p>
+</div>
+<div class="paragraph data-line-178">
+<p>\$B ~~ ((1, 2+i), (2-i, 5)) ~~ ((1, 2+i),(0, 5 - (2+i)(2-i))) = ((1, 2+i),(0,0))\$</p>
+</div>
+<div class="ulist data-line-180">
+<ul>
+<li class="data-line-180">
+<p>\$x_2 = alpha in CC " (freier Param) "\$</p>
+</li>
+<li class="data-line-181">
+<p>\$x_1 = alpha(-2-i)\$</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-183">
+<p>\$E_(lambda_i) = {((x_1),(x_2)) = alpha ((2+i),(1)) | alpha in CC}\$</p>
+</div>
+</div>
+<div class="sect2 data-line-185">
 <h3 id="_eigenvektor_x">Eigenvektor \$x\$</h3>
-<div class="paragraph data-line-166">
+<div class="paragraph data-line-187">
 <p>Es gibt immer einen Unterraum an vektoren zu einem Eigenwert \$lambda\$</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-189">
+<h2 id="_nützliches">Nützliches</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-191">
+<h3 id="_komplexe_zahlen">Komplexe Zahlen</h3>
+<div class="ulist data-line-193">
+<ul>
+<li class="data-line-193">
+<p>\$i^0 = 1\$</p>
+</li>
+<li class="data-line-194">
+<p>\$i^1 = i\$</p>
+</li>
+<li class="data-line-195">
+<p>\$i^2 = -1\$</p>
+</li>
+<li class="data-line-196">
+<p>\$i^3 = i^2 * i = - i\$</p>
+</li>
+<li class="data-line-197">
+<p>\$i^4 = 1\$</p>
+</li>
+<li class="data-line-198">
+<p>\$i^5 = i\$</p>
+</li>
+<li class="data-line-199">
+<p>\$vdots\$</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-201">
+<p>\$e^(-ipi) = -1\$</p>
+</div>
+<div class="sect3 data-line-203">
+<h4 id="_multiplikation">Multiplikation</h4>
+
+</div>
+<div class="sect3 data-line-205">
+<h4 id="_division">Division</h4>
+
+</div>
+<div class="sect3 data-line-207">
+<h4 id="_wurzeln">Wurzeln</h4>
+
+</div>
+</div>
+<div class="sect2 data-line-209">
+<h3 id="_determinante">Determinante</h3>
+
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-01-12 18:36:37 +0100
+Last updated 2021-01-20 22:16:44 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">

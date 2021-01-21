@@ -145,6 +145,12 @@ stem:[H] ist symetrisch und orthogonal: stem:[H = H^T = H^-1 "  dadurch folgt  "
 
 === Eigenwert stem:[lambda]
 
+stem:[det(A-lambda*I)*x = vec0]
+
+stem:[p(lambda) = det(A-lambda*I) " Charakterisches Polynom"]
+
+*Nullstellen* von stem:[p(lambda)] sind die *Eigenwerte* von stem:[A]
+
 Eine Matrix stem:[A] hat maximal stem:[n]  Eigenwerte (stem:[lambda])
 
 Die Spur (Diagonalsumme) der Matrix A ist gleich der Summe der Eigenwerte
@@ -161,6 +167,43 @@ stem:[A(x + y) = Ax + Ay = lambda x + lambda y = lambda (x+y)]
 
 stem:[A(mu x) = muAx = mu lambda x = lambda mu x]
 
+=== Eigenraum
+
+Eigenraum zu stem:[lambda_i = i]
+
+stem:[ubrace(A-lambda_i*I)_B * x = vec0]
+
+stem:[B = obrace(((2,5),(-1,-2)))^A - obrace(((i, 0), (0,i)))^(lambda_i * I) = ((2-i,5),(-1,-2-i)) => "Gaussverfahren"]
+
+stem:[B ~~ ((1, 2+i), (2-i, 5)) ~~ ((1, 2+i),(0, 5 - (2+i)(2-i))) = ((1, 2+i),(0,0))]
+
+* stem:[x_2 = alpha in CC " (freier Param) "]
+* stem:[x_1 = alpha(-2-i)]
+
+stem:[E_(lambda_i) = {((x_1),(x_2)) = alpha ((2+i),(1)) | alpha in CC}]
+
 === Eigenvektor stem:[x]
 
 Es gibt immer einen Unterraum an vektoren zu einem Eigenwert stem:[lambda]
+
+== Nützliches
+
+=== Komplexe Zahlen
+
+* stem:[i^0 = 1]
+* stem:[i^1 = i]
+* stem:[i^2 = -1]
+* stem:[i^3 = i^2 * i = - i]
+* stem:[i^4 = 1]
+* stem:[i^5 = i]
+* stem:[vdots]
+
+stem:[e^(-ipi) = -1]
+
+==== Multiplikation
+
+==== Division
+
+==== Wurzeln
+
+=== Determinante
