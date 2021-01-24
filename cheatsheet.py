@@ -159,7 +159,7 @@ def determinante(A):
     return det
 
 #LU zerlegung
-matrix2 = np.array([[0.8,2.2,3.6],[2.0,3.0,4.0],[1.2,2.0,5.8]])
+matrix2 = np.array([[0.8,2.2,3.6],[2.0,3.0,4.0],[1.2,2.0,5.8]], dtype=np.float64)
 print("LU:")
 print(lu(matrix2))
 
@@ -189,8 +189,8 @@ def QR(AA, b):
     print(Qs)
 
     #R = 
-    R = np.eye(Ao.shape[0], dtype=float)
-    Q = np.eye(Ao.shape[0], dtype=float)
+    R = np.eye(Ao.shape[0], dtype=np.float64)
+    Q = np.eye(Ao.shape[0], dtype=np.float64)
     for val in Qs:
         print(val)
         print(val.T)
@@ -211,7 +211,7 @@ def sign(x):
     return 1
 
 def e(x):
-    e = np.zeros(x, dtype=float).reshape(x, 1)
+    e = np.zeros(x, dtype=np.float64).reshape(x, 1)
     e[0][0] = 1
     return e
 
@@ -224,8 +224,8 @@ def padding(a, size):
     return result
 
 
-At = np.array([[1.,2,-1], [4,-2,6],[3,1,0]])
-bt = np.array([9,-4,9]).reshape(3,1)
+At = np.array([[1.,2,-1], [4,-2,6],[3,1,0]], dtype=np.float64)
+bt = np.array([9,-4,9], dtype=np.float64).reshape(3,1)
 
 QR(At, bt)
 
@@ -263,6 +263,7 @@ def QR_solve(A):
         
     return(Q,R)
 
+A=np.array([[15, 0, 1], [1,3,7], [0, 1, 6]], dtype=np.float64)
 #inverse
 Ainverse = np.linalg.inv(A)
 #condition infinity norm
@@ -283,24 +284,26 @@ def Gruppe_6_S9_Aufg2(A, Ag, b, bg): #A, A gestört, b, b gestört
     if cond_A * rel_A < 1:
         dx_max = (cond_A / (1 - (cond_A * rel_A))) * (rel_A + rel_b)
     else:
-        dx_max = NaN
+        dx_max = np.NaN
     
     dx_obs = norm(x - xg, np.inf) / norm(x, np.inf)
     
     return [x, xg, dx_max, dx_obs] #x, x gestört, obere Schranke des relativen Fehlers, tatsächlicher relatativer fehler
 
 #LDR
-A=np.array([[15, 0, 1], [1,3,7], [0, 1, 6]])
+A=np.array([[15, 0, 1], [1,3,7], [0, 1, 6]], dtype=np.float64)
 D=np.diag(np.diag(A))
 R=np.triu(A)-D
 L=np.tril(A)-D
 
+b = np.array([19,5,34], dtype=np.float64)
+
 #Jacobi
-def F_jacobi(x, L, D, R):
+def F_jacobi(x, b, L, D, R):
     return -np.linalg.inv(D) @ (L+R) @ x + np.linalg.inv(D) @ b
 
 #Gauss Seidel
-def F_gauss_seidel(x, L, D, R):
+def F_gauss_seidel(x, b, L, D, R):
     return -np.linalg.inv(D + L) @ R @ x + np.linalg.inv(D + L) @ b
 
 # opt: 
@@ -316,9 +319,9 @@ def Jacobi_Gauss_Seidel(A,b,x0,tol,opt):
     counter = 0
     while(a_posteriori > tol):
         if(opt):
-            x_next = F_jacobi(x, L, D, R)
+            x_next = F_jacobi(x, b, L, D, R)
         else:
-            x_next = F_gauss_seidel(x, L, D, R)
+            x_next = F_gauss_seidel(x, b, L, D, R)
         # print(x)
         a_posteriori = np.linalg.norm(x - x_next, np.inf)
         # print(a_posteriori)
