@@ -3,6 +3,7 @@
 :imagesdir: img
 :icons: font
 :toc:
+:sectnums:
 
 == Maschinengenauigkeit
 
@@ -82,7 +83,7 @@ a-posteriori:: stem:[|x_n - bar x| <= alpha/(1-alpha) |x_n - x_(n-1)|]
 
 == Numerische Lösung von linearen Gleichungssystemen
 
-=== Guass Algorithmus
+=== Gauss Algorithmus
 
 stem:[Ax = b]
 
@@ -207,3 +208,19 @@ stem:[e^(-ipi) = -1]
 ==== Wurzeln
 
 === Determinante
+
+stem:[det((a,b),(c,d)) = ad- cb]
+
+stem:[det((0,1,2),(3,2,1),(1,1,0)) = 0 ((2,1),(1,0)) color(red)(-) 1 ((3,1),(1,0)) color(red)(+) 2 ((3,2),(1,1)) = 0 + 1 + 2 = 3]
+
+NOTE: Nur quadratische Matrizen
+
+Wenn A *zwei gleiche Zeilen* oder eine *0-Zeile* besitzt -> stem:[det(A) = 0]
+
+Wenn A eine Dreiecksmatrix ist, ist stem:[det(A) = ] das Produkt ihrer Diagonalelemente
+
+stem:[det(lambdaA) = lambda^n * det(A) | A in RR^(n*n)]
+
+=== Inverse
+
+stem:[A^-1 = ((a,b),(c,d))^-1 = 1/(det(A)) * ((d,-b),(-c,a)) = 1/(ad-bc) * ((d,-b),(-c,a))]
