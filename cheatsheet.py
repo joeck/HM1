@@ -266,7 +266,7 @@ def QR_solve(A):
 #inverse
 Ainverse = np.linalg.inv(A)
 #condition infinity norm
-condA = np.linalg.norm(A, np.inf) * np.linalg.norm(Ainverse, np.inf
+condA = np.linalg.norm(A, np.inf) * np.linalg.norm(Ainverse, np.inf)
 
 #Serie 9 Aufgabe 2
 #relativer Fehler in gestörter Matrix
