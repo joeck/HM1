@@ -462,6 +462,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_ldr_zerlegung">3.3. LDR Zerlegung</a></li>
 <li><a href="#_qr_zerlegung">3.4. QR Zerlegung</a></li>
 <li><a href="#_fehlerrechnung_bei_lin_gleichungssystemen">3.5. Fehlerrechnung bei lin. Gleichungssystemen</a></li>
+<li><a href="#_normen">3.6. Normen</a></li>
 </ul>
 </li>
 <li><a href="#_eigenvektoren_und_eigenwerte">4. Eigenvektoren und Eigenwerte</a>
@@ -660,26 +661,29 @@ a-posteriori
 </tr>
 </table>
 </div>
+<div class="paragraph data-line-84">
+<p><span class="image"><img src="img/FixpunktAbschaetzung.png" alt="Fixpunkt Abschaetzung" width="50%"></span></p>
 </div>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-84">
+</div>
+<div class="sect1 data-line-86">
 <h2 id="_numerische_lösung_von_linearen_gleichungssystemen">3. Numerische Lösung von linearen Gleichungssystemen</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-86">
+<div class="sect2 data-line-88">
 <h3 id="_gauss_algorithmus">3.1. Gauss Algorithmus</h3>
-<div class="paragraph data-line-88">
+<div class="paragraph data-line-90">
 <p>\$Ax = b\$</p>
 </div>
-<div class="paragraph data-line-91">
+<div class="paragraph data-line-93">
 <div class="title">Beispiel Gaussalgorithmus</div>
 <p>\$A = [[20,10,0],[50,30,20], [200,150,100]], " " b = [[150], [470], [2150]]\$</p>
 </div>
-<div class="paragraph data-line-93">
+<div class="paragraph data-line-95">
 <p>\${:(),(50/20),(200/20):}[[20,10,0,=,150],[50,30,20,=,470], [200,150,100,=,2150]] rarr {:(),(),(50/5):}[[20,10,0,=,150],[0,5,20,=,95], [0,50,100,=,650]] rarr [[20,10,0,=,150],[0,5,20,=,95], [0,0,-100,=,-300]]\$</p>
 </div>
-<table class="tableblock frame-none grid-none stretch data-line-96">
+<table class="tableblock frame-none grid-none stretch data-line-98">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -694,43 +698,43 @@ a-posteriori
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-104">
+<div class="sect2 data-line-106">
 <h3 id="_lrlu_zerlegung">3.2. LR/LU Zerlegung</h3>
-<div class="paragraph data-line-106">
+<div class="paragraph data-line-108">
 <p>Das ursprüngliche Gleichungssystem \$bb (Ax = b)\$ lautet dann:</p>
 </div>
-<div class="paragraph data-line-108">
+<div class="paragraph data-line-110">
 <p>\$bb (LRx=b&lt;=&gt;Ly=b " und " Rx=y)\$</p>
 </div>
-<div class="paragraph data-line-111">
+<div class="paragraph data-line-113">
 <div class="title">Beispiel LR Zerlegung</div>
 <p>\$color(blue)(A = [[20,10,0],[50,30,20], [200,150,100]]), " " color(brown) (b = [[150], [470], [2150]])\$</p>
 </div>
-<div class="paragraph data-line-113">
+<div class="paragraph data-line-115">
 <p>\$
     color(red){:(),(50/20),(200/20):}[[1,0,0],[0,1,0],[0,0,1]]color(blue)([[20,10,0],[50,30,20], [200,150,100]]) rarr
     color(purple){:(),(),(50/5):}[[1,0,0],[color(red)(50/20),1,0],[color(red)(200/20),0,1]][[20,10,0],[0,5,20], [0,50,100]] rarr
     [[1,0,0],[color(red)(50/20),1,0],[color(red)(200/20),color(purple)(50/5),1]][[20,10,0],[0,5,20], [0,0,-100]]
     \$</p>
 </div>
-<div class="paragraph data-line-119">
+<div class="paragraph data-line-121">
 <p>\$bb (L = [[1,0,0],[50/20,1,0],[200/20,50/5,1]], " " R = [[20,10,0],[0,5,20], [0,0,-100]])\$</p>
 </div>
-<div class="paragraph data-line-121">
+<div class="paragraph data-line-123">
 <p>\$Ly = b &lt;=&gt; [[1,0,0],[50/20,1,0],[200/20,50/5,1]] color(brown)([[150], [470], [2150]]) rarr y_1 = 150, y_2 = 95, y_3 = -300
 -&gt; y = [[150], [95], [-300]]\$</p>
 </div>
-<div class="paragraph data-line-124">
+<div class="paragraph data-line-126">
 <p>\$Rx = y &lt;=&gt; [[20,10,0],[0,5,20], [0,0,-100]][[150], [95], [-300]] rarr x_1 = 4. " " x_2 = 7, " " x_3 = 3 rarr bb( x = [[4], [7], [3]])\$</p>
 </div>
 </div>
-<div class="sect2 data-line-126">
+<div class="sect2 data-line-128">
 <h3 id="_ldr_zerlegung">3.3. LDR Zerlegung</h3>
-<div class="paragraph data-line-128">
+<div class="paragraph data-line-130">
 <p>\$A = [[color(red)(15),0, 1],[1,color(red)(3),7], [0,1,color(red)(6)]] = L + D + R = [[0,0, 0],[1,0,0], [0,1, 0]] +
 [[color(red)(15),0,0],[0,color(red)(3),0], [0,0,color(red)(6)]] + [[0,0,1],[0,0,7], [0,0,0]] \$</p>
 </div>
-<div class="admonitionblock important data-line-131">
+<div class="admonitionblock important data-line-133">
 <table>
 <tr>
 <td class="icon">
@@ -743,53 +747,66 @@ Diagonal cannot have 0&#8217;s (Diagonaldominanz) &#8594; Zeilenvertauschung!
 </table>
 </div>
 </div>
-<div class="sect2 data-line-133">
+<div class="sect2 data-line-135">
 <h3 id="_qr_zerlegung">3.4. QR Zerlegung</h3>
-<div class="paragraph data-line-135">
+<div class="paragraph data-line-137">
 <p>\$A = QR\$</p>
 </div>
-<div class="paragraph data-line-137">
+<div class="paragraph data-line-139">
 <p>Orthogonale Matrix \$Q\$ ist regulär mit \$Q^-1 = Q^T\$</p>
 </div>
-<div class="sect3 data-line-139">
+<div class="sect3 data-line-141">
 <h4 id="_householder_matrizen">3.4.1. Householder-Matrizen</h4>
-<div class="paragraph data-line-141">
+<div class="paragraph data-line-143">
 <p>\$H := I_n - 2u u^T\$</p>
 </div>
-<div class="paragraph data-line-143">
+<div class="paragraph data-line-145">
 <p>\$H\$ ist symetrisch und orthogonal: \$H = H^T = H^-1 "  dadurch folgt  " H * H = I_n\$</p>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-145">
+<div class="sect2 data-line-147">
 <h3 id="_fehlerrechnung_bei_lin_gleichungssystemen">3.5. Fehlerrechnung bei lin. Gleichungssystemen</h3>
-<div class="paragraph data-line-147">
+<div class="paragraph data-line-149">
 <p>Absoluter Fehler: \$norm(x-hatx) &lt;= norm (A^-1) * norm(b-hatb)\$</p>
 </div>
-<div class="paragraph data-line-149">
+<div class="paragraph data-line-151">
 <p>Relativer Fehler: \$norm(x-hatx)/normx &lt;= normA * norm (A^-1) * norm(b-hatb)/norm(b) " falls " normb != 0\$</p>
 </div>
-<div class="paragraph data-line-151">
+<div class="paragraph data-line-153">
 <p>Konditionszahl: \$"cond"(A) = normA * norm(A^-1)\$</p>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1 data-line-153">
-<h2 id="_eigenvektoren_und_eigenwerte">4. Eigenvektoren und Eigenwerte</h2>
-<div class="sectionbody">
 <div class="sect2 data-line-155">
-<h3 id="_eigenwert_lambda">4.1. Eigenwert \$lambda\$</h3>
+<h3 id="_normen">3.6. Normen</h3>
 <div class="paragraph data-line-157">
-<p>\$det(A-lambda*I)*x overset(!)(=) vec0\$</p>
+<p>Spaltensummennorm: \$norm(A)_1 = max_(j=1...n) sum_(i=1)^nabs(a_(ij)) " Beispiel: " norm(a)_1 = abs(a_1) + abs(a_2) + abs(a_3) + ... + abs(a_n)\$</p>
 </div>
 <div class="paragraph data-line-159">
+<p>Zeilensummennorm: \$norm(A)_oo = max_(i=1...n) sum_(j=1)^nabs(a_(ij)) " Beispiel: " norm(a)_oo = max(abs(a_1), abs(a_2), ..., abs(a_n))\$</p>
+</div>
+<div class="paragraph data-line-162">
+<div class="title">Normen</div>
+<p><span class="image"><img src="img/normen.png" alt="Normen"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-164">
+<h2 id="_eigenvektoren_und_eigenwerte">4. Eigenvektoren und Eigenwerte</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-166">
+<h3 id="_eigenwert_lambda">4.1. Eigenwert \$lambda\$</h3>
+<div class="paragraph data-line-168">
+<p>\$det(A-lambda*I)*x overset(!)(=) vec0\$</p>
+</div>
+<div class="paragraph data-line-170">
 <p>\$p(lambda) = det(A-lambda*I) " Charakterisches Polynom"\$</p>
 </div>
-<div class="paragraph data-line-161">
+<div class="paragraph data-line-172">
 <p><strong>Nullstellen</strong> von \$p(lambda)\$ sind die <strong>Eigenwerte</strong> von \$A\$</p>
 </div>
-<div class="admonitionblock note data-line-163">
+<div class="admonitionblock note data-line-174">
 <table>
 <tr>
 <td class="icon">
@@ -801,92 +818,92 @@ Es gibt Lösungen für \$p(lambda)\$ wenn \$A-lambda I\$ singulär \$&lt;=&gt;\$
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-165">
+<div class="paragraph data-line-176">
 <p>Eine Matrix \$A\$ hat maximal \$n\$  Eigenwerte (\$lambda\$)</p>
 </div>
-<div class="paragraph data-line-167">
+<div class="paragraph data-line-178">
 <p>Die Spur (Diagonalsumme) der Matrix A ist gleich der Summe der Eigenwerte</p>
 </div>
-<div class="paragraph data-line-169">
+<div class="paragraph data-line-180">
 <p>Das Spektrum \$sigma(A)\$ ist die Menge aller Eigenwerte von \$A\$</p>
 </div>
-<div class="paragraph data-line-171">
+<div class="paragraph data-line-182">
 <p><strong>Die Eigenwerte einer Diagonalmatrix oder einer Dreiecksmatrix sind deren Diagonalelemente</strong></p>
 </div>
-<div class="paragraph data-line-173">
+<div class="paragraph data-line-184">
 <p>\$"tr"(A) = a_11 + a_22 + ... + a_(n n) = lambda_1 + lambda_2 + ... + lambda_n \$</p>
 </div>
-<div class="paragraph data-line-175">
+<div class="paragraph data-line-186">
 <p>\$"det"(A) = lamda_1 * lambda_2 * ... * lambda_n\$</p>
 </div>
-<div class="paragraph data-line-177">
+<div class="paragraph data-line-188">
 <p>\$A(x + y) = Ax + Ay = lambda x + lambda y = lambda (x+y)\$</p>
 </div>
-<div class="paragraph data-line-179">
+<div class="paragraph data-line-190">
 <p>\$A(mu x) = muAx = mu lambda x = lambda mu x\$</p>
 </div>
 </div>
-<div class="sect2 data-line-181">
+<div class="sect2 data-line-192">
 <h3 id="_eigenraum">4.2. Eigenraum</h3>
-<div class="paragraph data-line-183">
+<div class="paragraph data-line-194">
 <p>Eigenraum zu \$lambda_i = i\$</p>
 </div>
-<div class="paragraph data-line-185">
+<div class="paragraph data-line-196">
 <p>\$ubrace(A-lambda_i*I)_B * x overset(!)(=) vec0\$</p>
 </div>
-<div class="paragraph data-line-187">
+<div class="paragraph data-line-198">
 <p>\$B = obrace(((2,5),(-1,-2)))^A - obrace(((i, 0), (0,i)))^(lambda_i * I) = ((2-i,5),(-1,-2-i)) =&gt; "Gaussverfahren"\$</p>
 </div>
-<div class="paragraph data-line-189">
+<div class="paragraph data-line-200">
 <p>\$B ~~ ((1, 2+i), (2-i, 5)) ~~ ((1, 2+i),(0, 5 - (2+i)(2-i))) = ((1, 2+i),(0,0))\$</p>
 </div>
-<div class="ulist data-line-191">
+<div class="ulist data-line-202">
 <ul>
-<li class="data-line-191">
+<li class="data-line-202">
 <p>\$x_2 = alpha in CC " (freier Param) "\$</p>
 </li>
-<li class="data-line-192">
+<li class="data-line-203">
 <p>\$x_1 = alpha(-2-i)\$</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-194">
+<div class="paragraph data-line-205">
 <p>\$E_(lambda_i) = {((x_1),(x_2)) = alpha ((2+i),(1)) | alpha in CC}\$</p>
 </div>
 </div>
-<div class="sect2 data-line-196">
+<div class="sect2 data-line-207">
 <h3 id="_eigenvektor_x">4.3. Eigenvektor \$x\$</h3>
-<div class="paragraph data-line-198">
+<div class="paragraph data-line-209">
 <p>Es gibt immer einen Unterraum an vektoren zu einem Eigenwert \$lambda\$</p>
 </div>
 </div>
-<div class="sect2 data-line-200">
+<div class="sect2 data-line-211">
 <h3 id="_diagonalisierbarkeit">4.4. Diagonalisierbarkeit</h3>
-<div class="paragraph data-line-202">
+<div class="paragraph data-line-213">
 <p><span class="image"><img src="img/Diagonalisierbarkeit.png" alt="Diagonalisierbarkeit" width="50%"></span></p>
 </div>
-<div class="paragraph data-line-204">
+<div class="paragraph data-line-215">
 <p>\$B = T^-1 A T\$</p>
 </div>
-<div class="paragraph data-line-206">
+<div class="paragraph data-line-217">
 <p>Im Spezialfall ist \$B = D\$ eine Diagonalmatrix, also A diagonalisierbar.</p>
 </div>
-<div class="paragraph data-line-208">
+<div class="paragraph data-line-219">
 <p>\$"Diagonalmatrix " = D = ((lambda_1, 0), (0,lambda_2)) overset(bsp)(=) ((i, 0), (0,-i))\$</p>
 </div>
-<div class="paragraph data-line-210">
+<div class="paragraph data-line-221">
 <p>\$T = ((color(red)(-2-i), color(green)(-2+i)),(ubrace(color(red)(1))_(color(red)("EV zum EW" lambda_1)), ubrace(color(green)(1))_(color(green)("EV zum " E_(lambda_2))))) \$</p>
 </div>
-<div class="paragraph data-line-212">
+<div class="paragraph data-line-223">
 <p>T ist <strong>nicht</strong> eindeutig festgelegt. Man könnte spaltenweise mit beliebigen Skalaren \$alpha != 0\$ multiplizieren!</p>
 </div>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-215">
+<div class="sect1 data-line-226">
 <h2 id="_komplexe_zahlen">5. Komplexe Zahlen</h2>
 <div class="sectionbody">
-<table class="tableblock frame-none grid-none stretch data-line-218">
+<table class="tableblock frame-none grid-none stretch data-line-229">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -908,9 +925,9 @@ Es gibt Lösungen für \$p(lambda)\$ wenn \$A-lambda I\$ singulär \$&lt;=&gt;\$
 </tr>
 </tbody>
 </table>
-<div class="sect2 data-line-229">
+<div class="sect2 data-line-240">
 <h3 id="_darstellungsform">5.1. Darstellungsform</h3>
-<table class="tableblock frame-all grid-all stretch data-line-231">
+<table class="tableblock frame-all grid-all stretch data-line-242">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -935,7 +952,7 @@ Es gibt Lösungen für \$p(lambda)\$ wenn \$A-lambda I\$ singulär \$&lt;=&gt;\$
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame- grid-all stretch data-line-250">
+<table class="tableblock frame- grid-all stretch data-line-261">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -966,79 +983,79 @@ Winkel \$varphi\$ hier immer in Bogenmass (rad)!
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-261">
+<div class="sect2 data-line-272">
 <h3 id="_potenzen">5.2. Potenzen</h3>
-<div class="ulist data-line-263">
+<div class="ulist data-line-274">
 <ul>
-<li class="data-line-263">
+<li class="data-line-274">
 <p>\$i^0 = 1\$</p>
 </li>
-<li class="data-line-264">
+<li class="data-line-275">
 <p>\$i^1 = i\$</p>
 </li>
-<li class="data-line-265">
+<li class="data-line-276">
 <p>\$i^2 = -1\$</p>
 </li>
-<li class="data-line-266">
+<li class="data-line-277">
 <p>\$i^3 = i^2 * i = - i\$</p>
 </li>
-<li class="data-line-267">
+<li class="data-line-278">
 <p>\$i^4 = 1\$</p>
 </li>
-<li class="data-line-268">
+<li class="data-line-279">
 <p>\$i^5 = i\$</p>
 </li>
-<li class="data-line-269">
+<li class="data-line-280">
 <p>\$vdots\$</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-271">
+<div class="paragraph data-line-282">
 <p>\$e^(-ipi) = -1\$</p>
 </div>
 </div>
-<div class="sect2 data-line-273">
+<div class="sect2 data-line-284">
 <h3 id="_addition">5.3. Addition</h3>
-<div class="paragraph data-line-275">
+<div class="paragraph data-line-286">
 <p>\$z_1 + z_2 = (x_1 + x_2) + i(y_1 + y_2)\$</p>
 </div>
 </div>
-<div class="sect2 data-line-277">
+<div class="sect2 data-line-288">
 <h3 id="_subtraktion">5.4. Subtraktion</h3>
-<div class="paragraph data-line-279">
+<div class="paragraph data-line-290">
 <p>\$z_1 - z_2 = (x_1-x_2) + i(y_1 - y_2)\$</p>
 </div>
 </div>
-<div class="sect2 data-line-281">
+<div class="sect2 data-line-292">
 <h3 id="_multiplikation">5.5. Multiplikation</h3>
-<div class="paragraph data-line-283">
+<div class="paragraph data-line-294">
 <p>\$Z_1 * Z_2 = (x_1 + iy_1) * (x_2 + iy_2) = (x_1 x_2 - y_1 y_2) + i(x_1 y_2 + x_2 y_1)\$</p>
 </div>
 </div>
-<div class="sect2 data-line-285">
+<div class="sect2 data-line-296">
 <h3 id="_division">5.6. Division</h3>
-<div class="paragraph data-line-287">
+<div class="paragraph data-line-298">
 <p>\$Z_1/Z_2 = (x_1 + i y_1)/(x_2 + i y_2) = (x_1 x_2 + y_1 y_2)/(x_2^2 + y_2^2) + i (x_2 y_1 - x_1 y_2)/(x_2^2 + y_2^2)\$</p>
 </div>
 </div>
-<div class="sect2 data-line-289">
+<div class="sect2 data-line-300">
 <h3 id="_wurzeln">5.7. Wurzeln</h3>
 
 </div>
 </div>
 </div>
-<div class="sect1 data-line-291">
+<div class="sect1 data-line-302">
 <h2 id="_nützliches">6. Nützliches</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-293">
+<div class="sect2 data-line-304">
 <h3 id="_determinante">6.1. Determinante</h3>
-<div class="paragraph data-line-295">
+<div class="paragraph data-line-306">
 <p>\$det((a,b),(c,d)) = ad- cb\$</p>
 </div>
-<div class="paragraph data-line-297">
+<div class="paragraph data-line-308">
 <p>\$det((0,1,2),(3,2,1),(1,1,0)) = 0 ((2,1),(1,0)) color(red)(-) 1 ((3,1),(1,0)) color(red)(+) 2 ((3,2),(1,1)) = 0 + 1 + 2 = 3\$</p>
 </div>
-<div class="admonitionblock note data-line-299">
+<div class="admonitionblock note data-line-310">
 <table>
 <tr>
 <td class="icon">
@@ -1050,19 +1067,19 @@ Nur quadratische Matrizen
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-301">
+<div class="paragraph data-line-312">
 <p>Wenn A <strong>zwei gleiche Zeilen</strong> oder eine <strong>0-Zeile</strong> besitzt &#8594; \$det(A) = 0\$</p>
 </div>
-<div class="paragraph data-line-303">
+<div class="paragraph data-line-314">
 <p>Wenn A eine Dreiecksmatrix ist, ist \$det(A) = \$ das Produkt ihrer Diagonalelemente</p>
 </div>
-<div class="paragraph data-line-305">
+<div class="paragraph data-line-316">
 <p>\$det(lambdaA) = lambda^n * det(A) | A in RR^(n*n)\$</p>
 </div>
 </div>
-<div class="sect2 data-line-307">
+<div class="sect2 data-line-318">
 <h3 id="_inverse">6.2. Inverse</h3>
-<div class="paragraph data-line-309">
+<div class="paragraph data-line-320">
 <p>\$A^-1 = ((a,b),(c,d))^-1 = 1/(det(A)) * ((d,-b),(-c,a)) = 1/(ad-bc) * ((d,-b),(-c,a))\$</p>
 </div>
 </div>
@@ -1071,7 +1088,7 @@ Nur quadratische Matrizen
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-01-25 16:15:18 +0100
+Last updated 2021-01-25 22:28:48 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">

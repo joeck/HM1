@@ -81,6 +81,8 @@ Lipschitzkonstanze: stem:[alpha = max_(x_0 in [a,b\]) abs (F'(x_0))]
 a-priori:: stem:[|x_n - bar x| <= alpha^n/(1-alpha) |x_1 - x_0|]
 a-posteriori:: stem:[|x_n - bar x| <= alpha/(1-alpha) |x_n - x_(n-1)|]
 
+image:FixpunktAbschaetzung.png[Fixpunkt Abschaetzung, 50%]
+
 == Numerische Lösung von linearen Gleichungssystemen
 
 === Gauss Algorithmus
@@ -149,6 +151,15 @@ Absoluter Fehler: stem:[norm(x-hatx) <= norm (A^-1) * norm(b-hatb)]
 Relativer Fehler: stem:[norm(x-hatx)/normx <= normA * norm (A^-1) * norm(b-hatb)/norm(b) " falls " normb != 0]
 
 Konditionszahl: stem:["cond"(A) = normA * norm(A^-1)]
+
+=== Normen
+
+Spaltensummennorm: stem:[norm(A)_1 = max_(j=1...n) sum_(i=1)^nabs(a_(ij)) " Beispiel: " norm(a)_1 = abs(a_1) + abs(a_2) + abs(a_3) + ... + abs(a_n)]
+
+Zeilensummennorm: stem:[norm(A)_oo = max_(i=1...n) sum_(j=1)^nabs(a_(ij)) " Beispiel: " norm(a)_oo = max(abs(a_1), abs(a_2), ..., abs(a_n))]
+
+.Normen
+image:normen.png[Normen]
 
 == Eigenvektoren und Eigenwerte
 
