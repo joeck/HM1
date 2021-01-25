@@ -19,7 +19,7 @@ stem:["Relativer Fehler: " abs ((hat x - x )/ x)]
 
 === Kondition
 
-stem:["Konditionszahl: " (abs (f'(x)) * abs x)/ (abs (f(x))) ]
+stem:["Konditionszahl: " (abs (f'(x)) * abs x)/ (abs (f(x))) ] gut wenn  stem:[K <= 1]
 
 == Numerische Lösung von Nullstellenproblemen
 
@@ -70,11 +70,11 @@ stem:[x_(n+1) = F(x_n) = x_n^3 + 0.3]
 
 === Banachscher Fixpunktsatz
 
-stem:[|F(x) - F(y)| <= alpha |x-y| " für alle " x in [a,b\]]
+stem:[|F(x) - F(y)| <= alpha |x-y| " für alle " x,y in [a,b\]]
 
 Dabei gilt stem:[0 < alpha < 1]
 
-stem:[alpha = max_(x_0 in [a,b\]) abs (F'(x_0))]
+Lipschitzkonstanze: stem:[alpha = max_(x_0 in [a,b\]) abs (F'(x_0))]
 
 ==== Abschätzungen
 [horizontal]
@@ -141,6 +141,14 @@ Orthogonale Matrix stem:[Q] ist regulär mit stem:[Q^-1 = Q^T]
 stem:[H := I_n - 2u u^T]
 
 stem:[H] ist symetrisch und orthogonal: stem:[H = H^T = H^-1 "  dadurch folgt  " H * H = I_n]
+
+=== Fehlerrechnung bei lin. Gleichungssystemen
+
+Absoluter Fehler: stem:[norm(x-hatx) <= norm (A^-1) * norm(b-hatb)]
+
+Relativer Fehler: stem:[norm(x-hatx)/normx <= normA * norm (A^-1) * norm(b-hatb)/norm(b) " falls " normb != 0]
+
+Konditionszahl: stem:["cond"(A) = normA * norm(A^-1)]
 
 == Eigenvektoren und Eigenwerte
 

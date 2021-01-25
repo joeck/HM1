@@ -1,5 +1,17 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from scipy.linalg import lu
+
+
+R = np.array([
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+], dtype=np.float64)
+
+#Kondition
+def cond(x, f, df):
+    return np.abs(df(x)) * np.abs(x) / np.abs(f(x))
 
 #Horner schema
 def horner(p, x):
@@ -28,7 +40,7 @@ def fixpunktIteraion(f,x0,epsIncr,alpha): #F(x) fixIt gleichung, startpunkt, gen
     import numpy as np
     k=0
     notConverged=True
-    N=1000 #max iterationen
+    N=1000 # iterationen
     
     while (notConverged and k<N):
         x1=f(x0) #fixpunktiterationsschritt
@@ -36,7 +48,7 @@ def fixpunktIteraion(f,x0,epsIncr,alpha): #F(x) fixIt gleichung, startpunkt, gen
         notConverged=error>epsIncr #abbruchbedingung genauigkeit
         k=k+1
         x0=x1
-    return(x1,k)
+    return(x1,k) # berechneter Fixpunkt, anzahl iterationen
 
 #Newtonverfahren
 def newton(f, f1, x):
@@ -137,6 +149,7 @@ def obereDreiecksMatrix(A, b):
         for j in range(i+1, len(rows)):
             # eliminationsschritt
             A[j] = A[j] - A[i].dot(A[j][i]/A[i][i])
+            #print(A)
     return A
 
 #Matrix rückwärts einsetzen
@@ -149,7 +162,7 @@ def einsetzen(A):
         for c in range(offset):
             sum += x[c] * A[r][-1 - offset + c] # addieren/einsetzen der schon berechneten unbekannten
         x.insert(0, (A[r][-1] - sum)/A[r][-2 - offset]) # unbekannte der Zeile berechnen
-    return x
+    return np.array([x]).T
 
 #determinante
 def determinante(A):
