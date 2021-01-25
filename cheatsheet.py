@@ -20,22 +20,6 @@ def horner(p, x):
         y = y*x + p[k]*np.ones(x.shape, dtype=np.float64)
     return y
 
-#Iterationsverfahren
-def f(x):
-    return np.exp(x**2) + x**-3 - 10
-def f1(x):
-    return 2 * np.exp(x**2) * x - 3/(x**4)
-count = 0
-x0 = -1.0
-x1 = -1.2
-while (count < 10 ):
-    print("x" + str(count) + ": " + str(x1))
-    x = sekant(f, x0, x1)
-    x0 = x1
-    x1 = x
-    count += 1
-print(x1)
-
 def fixpunktIteraion(f,x0,epsIncr,alpha): #F(x) fixIt gleichung, startpunkt, genauigkeit, lipschitzkonstante 
     import numpy as np
     k=0
@@ -72,6 +56,22 @@ def sekantenVerfahren(f, x0, x1, tol):
 
 def sekant(f, x0, x1):
     return x1 - ((x1 - x0)/(f(x1)-f(x0)) * f(x1))
+
+#Iterationsverfahren
+def f(x):
+    return np.exp(x**2) + x**-3 - 10
+def f1(x):
+    return 2 * np.exp(x**2) * x - 3/(x**4)
+count = 0
+x0 = -1.0
+x1 = -1.2
+while (count < 10 ):
+    print("x" + str(count) + ": " + str(x1))
+    x = sekant(f, x0, x1)
+    x0 = x1
+    x1 = x
+    count += 1
+print(x1)
 
 #Fixpunktiteration
 def h(x): # Funktion
