@@ -146,11 +146,13 @@ stem:[H] ist symetrisch und orthogonal: stem:[H = H^T = H^-1 "  dadurch folgt  "
 
 === Eigenwert stem:[lambda]
 
-stem:[det(A-lambda*I)*x = vec0]
+stem:[det(A-lambda*I)*x overset(!)(=) vec0]
 
 stem:[p(lambda) = det(A-lambda*I) " Charakterisches Polynom"]
 
 *Nullstellen* von stem:[p(lambda)] sind die *Eigenwerte* von stem:[A]
+
+NOTE: Es gibt Lösungen für stem:[p(lambda)] wenn stem:[A-lambda I] singulär stem:[<=>] nicht invertierbar stem:[<=>] stem:[det(A-lambda I) = 0] ist.
 
 Eine Matrix stem:[A] hat maximal stem:[n]  Eigenwerte (stem:[lambda])
 
@@ -172,7 +174,7 @@ stem:[A(mu x) = muAx = mu lambda x = lambda mu x]
 
 Eigenraum zu stem:[lambda_i = i]
 
-stem:[ubrace(A-lambda_i*I)_B * x = vec0]
+stem:[ubrace(A-lambda_i*I)_B * x overset(!)(=) vec0]
 
 stem:[B = obrace(((2,5),(-1,-2)))^A - obrace(((i, 0), (0,i)))^(lambda_i * I) = ((2-i,5),(-1,-2-i)) => "Gaussverfahren"]
 
@@ -187,9 +189,41 @@ stem:[E_(lambda_i) = {((x_1),(x_2)) = alpha ((2+i),(1)) | alpha in CC}]
 
 Es gibt immer einen Unterraum an vektoren zu einem Eigenwert stem:[lambda]
 
-== Nützliches
+=== Diagonalisierbarkeit
 
-=== Komplexe Zahlen
+image:Diagonalisierbarkeit.png[Diagonalisierbarkeit, 50%]
+
+stem:["Diagonalmatrix " = D = ((lambda_1, 0), (0,lambda_2)) overset(bsp)(=) ((i, 0), (0,-i))]
+
+stem:[T = ((color(red)(-2-i), color(green)(-2+i)),(ubrace(color(red)(1))_(color(red)("EV zum EW" lambda_1)), ubrace(color(green)(1))_(color(green)("EV zum " E_(lambda_2))))) ]
+
+T ist *nicht* eindeutig festgelegt. Man könnte spaltenweise mit beliebigen Skalaren stem:[alpha != 0] multiplizieren!
+
+
+== Komplexe Zahlen
+
+[cols="2*a", frame="none", grid="none"]
+|===
+|stem:[i^2 = -1]
+
+stem:[x^2 = -1 = i^2 => x = +- i]
+
+|stem:[z = x + iy]
+
+stem:[CC = {z \| z = x + iy " mit " x,y in RR}]
+
+|===
+
+=== Darstellungsform
+
+|===
+| Normalform | Trigonometrische Form | Exponentialform
+
+|stem:[z = x + iy] |stem:[z = r(cosvarphi + i * sinvarphi)] | stem:[z=re^(ivarphi)]
+
+|===
+
+=== Potenzen
 
 * stem:[i^0 = 1]
 * stem:[i^1 = i]
@@ -201,11 +235,17 @@ Es gibt immer einen Unterraum an vektoren zu einem Eigenwert stem:[lambda]
 
 stem:[e^(-ipi) = -1]
 
-==== Multiplikation
+=== Multiplikation
 
-==== Division
+stem:[Z_1 * Z_2 = (x_1 + iy_1) * (x_2 + iy_2) = (x_1 x_2 - y_1 y_2) + i(x_1 y_2 + x_2 y_1)]
 
-==== Wurzeln
+=== Division
+
+stem:[Z_1/Z_2 = (x_1 + i y_1)/(x_2 + i y_2) = (x_1 x_2 + y_1 y_2)/(x_2^2 + y_2^2) + i (x_2 y_1 - x_1 y_2)/(x_2^2 + y_2^2)]
+
+=== Wurzeln
+
+== Nützliches
 
 === Determinante
 
