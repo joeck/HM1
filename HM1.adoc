@@ -193,6 +193,10 @@ Es gibt immer einen Unterraum an vektoren zu einem Eigenwert stem:[lambda]
 
 image:Diagonalisierbarkeit.png[Diagonalisierbarkeit, 50%]
 
+stem:[B = T^-1 A T]
+
+Im Spezialfall ist stem:[B = D] eine Diagonalmatrix, also A diagonalisierbar.
+
 stem:["Diagonalmatrix " = D = ((lambda_1, 0), (0,lambda_2)) overset(bsp)(=) ((i, 0), (0,-i))]
 
 stem:[T = ((color(red)(-2-i), color(green)(-2+i)),(ubrace(color(red)(1))_(color(red)("EV zum EW" lambda_1)), ubrace(color(green)(1))_(color(green)("EV zum " E_(lambda_2))))) ]
@@ -219,8 +223,31 @@ stem:[CC = {z \| z = x + iy " mit " x,y in RR}]
 |===
 | Normalform | Trigonometrische Form | Exponentialform
 
-|stem:[z = x + iy] |stem:[z = r(cosvarphi + i * sinvarphi)] | stem:[z=re^(ivarphi)]
+|stem:[z = x + iy] 
 
+|stem:[z = r(cosvarphi + i * sinvarphi)] 
+
+stem:[r = absz = sqrt(x^2+y^2)]
+
+stem:[x = cosvarphi]
+
+stem:[y = sinvarphi]
+
+| stem:[z=re^(ivarphi)]
+
+stem:[e^(i varphi) = cosvarphi + i * sinvarphi]
+|===
+
+[cols="2*a", frame=""]
+|===
+|
+.Bildpunkt und Zeiger in Gausschen Zahlenebene
+image:DarstellungKomplexeZahlen.png[Darstellung Komplexe Zahlen]
+|
+.Polardarstellung
+image:Polardarstellung.png[Polardarstellung]
+
+WARNING: Winkel stem:[varphi] hier immer in Bogenmass (rad)!
 |===
 
 === Potenzen
@@ -234,6 +261,14 @@ stem:[CC = {z \| z = x + iy " mit " x,y in RR}]
 * stem:[vdots]
 
 stem:[e^(-ipi) = -1]
+
+=== Addition
+
+stem:[z_1 + z_2 = (x_1 + x_2) + i(y_1 + y_2)]
+
+=== Subtraktion
+
+stem:[z_1 - z_2 = (x_1-x_2) + i(y_1 - y_2)]
 
 === Multiplikation
 
